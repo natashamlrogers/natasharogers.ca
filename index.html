@@ -38,8 +38,8 @@
   .hero-desc { font-size: 1rem; line-height: 1.8; max-width: 420px; color: var(--ink); opacity: 0.75; margin-bottom: 3rem; }
   .hero-cta { display: inline-flex; align-items: center; gap: 1rem; background: var(--deep); color: var(--paper); padding: 1rem 2rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.3s; width: fit-content; }
   .hero-cta:hover { background: var(--rose); }
-  .hero-right { position: relative; overflow: hidden; background: linear-gradient(135deg, #3b1f2b 0%, #5c2d42 50%, #7a3558 100%); }
-  .hero-stat-grid { position: absolute; inset: 0; display: grid; grid-template-rows: 1fr 1fr; padding: 8rem 4rem 4rem; gap: 2rem; z-index: 1; }
+  .hero-right { position: relative; overflow: hidden; background: linear-gradient(135deg, #3b1f2b 0%, #5c2d42 50%, #7a3558 100%); display: flex; align-items: center; justify-content: center; }
+  .hero-stat-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; padding: clamp(2rem, 5vw, 4rem); gap: clamp(1.5rem, 3vw, 2.5rem); z-index: 1; width: 100%; box-sizing: border-box; }
   .hero-stat { border-top: 1px solid rgba(232,160,184,0.25); padding-top: 1.5rem; }
   .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 4.5rem; font-weight: 300; color: var(--pink); line-height: 1; display: block; }
   .stat-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(253,245,247,0.6); margin-top: 0.5rem; display: block; }
@@ -167,22 +167,22 @@
   </div>
   <div class="hero-right">
     <div class="hero-stat-grid">
-      <div>
+      <div style="display:flex;flex-direction:column;gap:clamp(1.5rem,3vw,2.5rem)">
         <div class="hero-stat">
           <span class="stat-num">433<span style="font-size:2rem">%</span></span>
           <span class="stat-label">Webinar Program Growth</span>
         </div>
-        <div class="hero-stat" style="margin-top:2.5rem">
+        <div class="hero-stat">
           <span class="stat-num">400<span style="font-size:2rem">+</span></span>
           <span class="stat-label">Virtual Events Annually</span>
         </div>
       </div>
-      <div>
+      <div style="display:flex;flex-direction:column;gap:clamp(1.5rem,3vw,2.5rem)">
         <div class="hero-stat">
           <span class="stat-num">$1M<span style="font-size:2rem">+</span></span>
           <span class="stat-label">Influenced Pipeline</span>
         </div>
-        <div class="hero-stat" style="margin-top:2.5rem">
+        <div class="hero-stat">
           <span class="stat-num">10<span style="font-size:2rem">+</span></span>
           <span class="stat-label">Years of Leadership</span>
         </div>

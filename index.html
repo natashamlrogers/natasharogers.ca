@@ -39,10 +39,13 @@
   .hero-cta { display: inline-flex; align-items: center; gap: 1rem; background: var(--deep); color: var(--paper); padding: 1rem 2rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.3s; width: fit-content; }
   .hero-cta:hover { background: var(--rose); }
   .hero-right { position: relative; overflow: hidden; background: linear-gradient(135deg, #3b1f2b 0%, #5c2d42 50%, #7a3558 100%); display: flex; align-items: center; justify-content: center; }
-  .hero-stat-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; padding: clamp(2rem, 5vw, 4rem); gap: clamp(1.5rem, 3vw, 2.5rem); z-index: 1; width: 100%; box-sizing: border-box; }
-  .hero-stat { border-top: 1px solid rgba(232,160,184,0.25); padding-top: 1.5rem; }
-  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 4.5rem; font-weight: 300; color: var(--pink); line-height: 1; display: block; }
-  .stat-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(253,245,247,0.6); margin-top: 0.5rem; display: block; }
+  .hero-right-inner { display: flex; flex-direction: column; align-items: center; gap: clamp(1.5rem, 3vw, 2.5rem); width: 100%; z-index: 1; padding: clamp(5rem, 8vw, 8rem) clamp(2rem, 4vw, 4rem) clamp(2rem, 4vw, 4rem); box-sizing: border-box; }
+  .hero-photo { width: clamp(110px, 14vw, 180px); height: clamp(110px, 14vw, 180px); border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid rgba(232,160,184,0.45); display: block; box-shadow: 0 0 0 6px rgba(232,160,184,0.08); }
+  .hero-photo-fallback { width: clamp(110px, 14vw, 180px); height: clamp(110px, 14vw, 180px); border-radius: 50%; background: rgba(232,160,184,0.08); border: 2px dashed rgba(232,160,184,0.35); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.3rem; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(232,160,184,0.5); text-align: center; }
+  .hero-stat-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2rem); z-index: 1; width: 100%; box-sizing: border-box; }
+  .hero-stat { border-top: 1px solid rgba(232,160,184,0.25); padding-top: 1.2rem; }
+  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 4vw, 4.5rem); font-weight: 300; color: var(--pink); line-height: 1; display: block; }
+  .stat-label { font-size: 0.72rem; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(253,245,247,0.6); margin-top: 0.4rem; display: block; }
   .hero-deco { position: absolute; font-family: 'Cormorant Garamond', serif; font-size: 18rem; font-weight: 300; color: rgba(232,160,184,0.06); bottom: -3rem; right: -2rem; line-height: 1; user-select: none; z-index: 0; }
 
   /* SHARED */
@@ -96,6 +99,22 @@
   .skill-tag:hover { background: var(--deep); color: var(--paper); border-color: var(--deep); }
   .skill-tag.proficient { background: var(--mist); border-color: var(--mist); }
 
+  /* GALLERY */
+  .gallery-section { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--mist); }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-top: 1.2rem; }
+  .gallery-item { aspect-ratio: 1; overflow: hidden; cursor: pointer; position: relative; background: var(--mist); }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; display: block; }
+  .gallery-item:hover img { transform: scale(1.06); }
+  .gallery-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; color: var(--deep); opacity: 0.35; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; }
+  .gallery-placeholder svg { width: 2rem; height: 2rem; stroke: currentColor; fill: none; stroke-width: 1.5; }
+
+  /* LIGHTBOX */
+  .lightbox { display: none; position: fixed; inset: 0; background: rgba(26,17,24,0.96); z-index: 999; align-items: center; justify-content: center; padding: 2rem; }
+  .lightbox.open { display: flex; }
+  .lightbox-img { max-width: 90vw; max-height: 88vh; object-fit: contain; box-shadow: 0 2rem 6rem rgba(0,0,0,0.6); }
+  .lightbox-close { position: absolute; top: 1.5rem; right: 2rem; background: none; border: none; color: rgba(253,245,247,0.7); font-size: 2.2rem; cursor: pointer; line-height: 1; transition: color 0.2s; padding: 0.5rem; }
+  .lightbox-close:hover { color: var(--pink); }
+
   /* COMMUNITY */
   #community { background: var(--mist); }
   .community-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
@@ -138,6 +157,7 @@
     .hero-left { padding: 7rem 2rem 4rem; }
     .container { padding: 0 2rem; }
     .about-grid, .skills-grid, .contact-layout, .impact-grid, .community-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .edu-items { flex-direction: column; gap: 2rem; }
     .edu-item { border-right: none; border-bottom: 1px solid rgba(232,160,184,0.15); padding: 0 0 2rem; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
@@ -166,25 +186,32 @@
     <a class="hero-cta" href="#contact">Let's Connect <span>→</span></a>
   </div>
   <div class="hero-right">
-    <div class="hero-stat-grid">
-      <div style="display:flex;flex-direction:column;gap:clamp(1.5rem,3vw,2.5rem)">
-        <div class="hero-stat">
-          <span class="stat-num">433<span style="font-size:2rem">%</span></span>
-          <span class="stat-label">Webinar Program Growth</span>
-        </div>
-        <div class="hero-stat">
-          <span class="stat-num">400<span style="font-size:2rem">+</span></span>
-          <span class="stat-label">Virtual Events Annually</span>
-        </div>
+    <div class="hero-right-inner">
+      <img src="images/profile.jpg" alt="Natasha Rogers" class="hero-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="hero-photo-fallback" style="display:none">
+        <svg viewBox="0 0 24 24" width="2rem" height="2rem" stroke="rgba(232,160,184,0.5)" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span>Your photo</span>
       </div>
-      <div style="display:flex;flex-direction:column;gap:clamp(1.5rem,3vw,2.5rem)">
-        <div class="hero-stat">
-          <span class="stat-num">$1M<span style="font-size:2rem">+</span></span>
-          <span class="stat-label">Influenced Pipeline</span>
+      <div class="hero-stat-grid">
+        <div style="display:flex;flex-direction:column;gap:clamp(1rem,2.5vw,2rem)">
+          <div class="hero-stat">
+            <span class="stat-num">433<span style="font-size:1.6rem">%</span></span>
+            <span class="stat-label">Webinar Program Growth</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-num">400<span style="font-size:1.6rem">+</span></span>
+            <span class="stat-label">Virtual Events Annually</span>
+          </div>
         </div>
-        <div class="hero-stat">
-          <span class="stat-num">10<span style="font-size:2rem">+</span></span>
-          <span class="stat-label">Years of Leadership</span>
+        <div style="display:flex;flex-direction:column;gap:clamp(1rem,2.5vw,2rem)">
+          <div class="hero-stat">
+            <span class="stat-num">$1M<span style="font-size:1.6rem">+</span></span>
+            <span class="stat-label">Influenced Pipeline</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-num">10<span style="font-size:1.6rem">+</span></span>
+            <span class="stat-label">Years of Leadership</span>
+          </div>
         </div>
       </div>
     </div>
@@ -220,8 +247,46 @@
         </div>
       </div>
     </div>
+
+    <!-- PHOTO GALLERY -->
+    <div class="gallery-section">
+      <div class="section-label" style="margin-bottom:1rem">Photo Gallery</div>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox('images/gallery-1.jpg')">
+          <img src="images/gallery-1.jpg" alt="Gallery photo 1" onerror="this.style.display='none'">
+          <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 1</span></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery-2.jpg')">
+          <img src="images/gallery-2.jpg" alt="Gallery photo 2" onerror="this.style.display='none'">
+          <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 2</span></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery-3.jpg')">
+          <img src="images/gallery-3.jpg" alt="Gallery photo 3" onerror="this.style.display='none'">
+          <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 3</span></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery-4.jpg')">
+          <img src="images/gallery-4.jpg" alt="Gallery photo 4" onerror="this.style.display='none'">
+          <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 4</span></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery-5.jpg')">
+          <img src="images/gallery-5.jpg" alt="Gallery photo 5" onerror="this.style.display='none'">
+          <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 5</span></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox('images/gallery-6.jpg')">
+          <img src="images/gallery-6.jpg" alt="Gallery photo 6" onerror="this.style.display='none'">
+          <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 6</span></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox(event)">×</button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="Gallery photo">
+</div>
 
 <!-- EXPERIENCE -->
 <section id="experience">
@@ -493,5 +558,21 @@
   <div class="footer-copy">Event Specialist · Strategic Leader · Calgary, AB</div>
 </footer>
 
+<script>
+  function openLightbox(src) {
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = src;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(e) {
+    if (!e || e.target !== document.getElementById('lightbox-img')) {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
 </body>
 </html>

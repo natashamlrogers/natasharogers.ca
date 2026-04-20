@@ -318,6 +318,36 @@
     padding: 26px 24px 20px;
     background: var(--wine);
     text-align: center;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s ease;
+  }
+  .tier-header:hover {
+    background: #6a2940;
+  }
+  .tier-toggle {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(253,248,243,0.15);
+    border: 1px solid rgba(253,248,243,0.35);
+    color: #FDF8F3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1;
+    transition: transform 0.3s ease, background 0.2s ease;
+    pointer-events: none;
+  }
+  .tier.expanded .tier-toggle {
+    transform: rotate(45deg);
+    background: rgba(253,248,243,0.28);
   }
   .tier.featured .tier-header {
     background: var(--wine);
@@ -353,6 +383,16 @@
   }
   .tier-body {
     padding: 22px 24px 28px;
+    max-height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+  }
+  .tier.expanded .tier-body {
+    max-height: 1500px;
+    padding-top: 22px;
+    padding-bottom: 28px;
   }
   .tier-feature {
     font-size: 13.5px;
@@ -742,20 +782,29 @@
 
     <div class="tiers-grid">
 
-      <!-- EVENT PARTNER -->
-      <div class="tier">
-        <div class="tier-header">
-          <div class="tier-name">Event Partner</div>
-          <div class="tier-price">$750</div>
-          <div class="tier-per">per event</div>
-          <p class="tier-tagline">Perfect for brands looking to build awareness and be part of a curated, high-energy women's experience.</p>
+      <!-- SERIES PARTNER -->
+      <div class="tier" style="border:1.5px solid var(--wine);">
+        <div class="tier-header" style="background:var(--wine);">
+          <span class="tier-badge">Exclusive</span>
+          <div class="tier-name" style="color:#FDF8F3;">Series Partner</div>
+          <div class="tier-price" style="color:#FDF8F3;">$6,500</div>
+          <div class="tier-per" style="color:#FDF8F3;">all 3 events</div>
+          <p class="tier-tagline-dark">Become the exclusive brand partner shaping the conversation across an entire series, building trust, visibility, and long-term brand affinity with Calgary's most engaged female audience.</p>
+          <span class="tier-toggle" aria-label="Toggle details">+</span>
         </div>
         <div class="tier-body">
-          <div class="tier-feature"><span class="check">✦</span> Brand visibility across event materials & signage</div>
-          <div class="tier-feature"><span class="check">✦</span> Dedicated social media exposure (1 post + story mentions)</div>
-          <div class="tier-feature"><span class="check">✦</span> Inclusion in guest welcome bags (optional)</div>
-          <div class="tier-feature"><span class="check">✦</span> 2 complimentary tickets</div>
-          <div class="tier-feature"><span class="check">✦</span> On-site brand presence and visibility</div>
+          <div class="tier-feature"><span class="check">✦</span> Everything in Presenting Partner, across all 3 events</div>
+          <div class="tier-feature"><span class="check">✦</span> Consistent brand presence across 3 high-impact, in-person experiences</div>
+          <div class="tier-feature"><span class="check">✦</span> Exclusive category positioning (no direct competitors)</div>
+          <div class="tier-feature"><span class="check">✦</span> Expert speaking opportunity (your team featured on stage)</div>
+          <div class="tier-feature"><span class="check">✦</span> Premium content package: 2 edited reels + 10 raw UGC clips + 5 edited photos per event</div>
+          <div class="tier-feature"><span class="check">✦</span> Priority placement in all event recap content</div>
+          <div class="tier-feature"><span class="check">✦</span> Full rights to use and repost content across your platforms</div>
+          <div class="tier-feature"><span class="check">✦</span> Co-branded series naming opportunity (optional)</div>
+          <div class="tier-feature"><span class="check">✦</span> Featured in post-event recap blog + email campaigns</div>
+          <div class="tier-feature"><span class="check">✦</span> Premium brand integration across the full event experience</div>
+          <div class="tier-feature"><span class="check">✦</span> 6+ complimentary tickets across the series</div>
+          <div class="tier-feature"><span class="check">✦</span> Custom partnership opportunities tailored to your brand goals</div>
         </div>
       </div>
 
@@ -767,6 +816,7 @@
           <div class="tier-price">$2,250</div>
           <div class="tier-per">per event</div>
           <p class="tier-tagline-dark">Be positioned as the trusted expert guiding the conversation, not just part of it.</p>
+          <span class="tier-toggle" aria-label="Toggle details">+</span>
         </div>
         <div class="tier-body">
           <div class="tier-feature"><span class="check">✦</span> Named as the Presenting Partner of the evening</div>
@@ -789,28 +839,21 @@
 
     <div class="tiers-grid-bottom">
 
-      <!-- SERIES PARTNER -->
-      <div class="tier" style="border:1.5px solid var(--wine);">
-        <div class="tier-header" style="background:var(--wine);">
-          <span class="tier-badge">Exclusive</span>
-          <div class="tier-name" style="color:#FDF8F3;">Series Partner</div>
-          <div class="tier-price" style="color:#FDF8F3;">$6,500</div>
-          <div class="tier-per" style="color:#FDF8F3;">all 3 events</div>
-          <p class="tier-tagline-dark">Become the exclusive brand partner shaping the conversation across an entire series, building trust, visibility, and long-term brand affinity with Calgary's most engaged female audience.</p>
+      <!-- EVENT PARTNER -->
+      <div class="tier">
+        <div class="tier-header">
+          <div class="tier-name">Event Partner</div>
+          <div class="tier-price">$750</div>
+          <div class="tier-per">per event</div>
+          <p class="tier-tagline">Perfect for brands looking to build awareness and be part of a curated, high-energy women's experience.</p>
+          <span class="tier-toggle" aria-label="Toggle details">+</span>
         </div>
         <div class="tier-body">
-          <div class="tier-feature"><span class="check">✦</span> Everything in Presenting Partner, across all 3 events</div>
-          <div class="tier-feature"><span class="check">✦</span> Consistent brand presence across 3 high-impact, in-person experiences</div>
-          <div class="tier-feature"><span class="check">✦</span> Exclusive category positioning (no direct competitors)</div>
-          <div class="tier-feature"><span class="check">✦</span> Expert speaking opportunity (your team featured on stage)</div>
-          <div class="tier-feature"><span class="check">✦</span> Premium content package: 2 edited reels + 10 raw UGC clips + 5 edited photos per event</div>
-          <div class="tier-feature"><span class="check">✦</span> Priority placement in all event recap content</div>
-          <div class="tier-feature"><span class="check">✦</span> Full rights to use and repost content across your platforms</div>
-          <div class="tier-feature"><span class="check">✦</span> Co-branded series naming opportunity (optional)</div>
-          <div class="tier-feature"><span class="check">✦</span> Featured in post-event recap blog + email campaigns</div>
-          <div class="tier-feature"><span class="check">✦</span> Premium brand integration across the full event experience</div>
-          <div class="tier-feature"><span class="check">✦</span> 6+ complimentary tickets across the series</div>
-          <div class="tier-feature"><span class="check">✦</span> Custom partnership opportunities tailored to your brand goals</div>
+          <div class="tier-feature"><span class="check">✦</span> Brand visibility across event materials & signage</div>
+          <div class="tier-feature"><span class="check">✦</span> Dedicated social media exposure (1 post + story mentions)</div>
+          <div class="tier-feature"><span class="check">✦</span> Inclusion in guest welcome bags (optional)</div>
+          <div class="tier-feature"><span class="check">✦</span> 2 complimentary tickets</div>
+          <div class="tier-feature"><span class="check">✦</span> On-site brand presence and visibility</div>
         </div>
       </div>
 
@@ -821,6 +864,7 @@
           <div class="tier-price">$250+</div>
           <div class="tier-per">custom / in-kind</div>
           <p class="tier-tagline">Ideal for brands looking to create a memorable, tangible touchpoint with attendees.</p>
+          <span class="tier-toggle" aria-label="Toggle details">+</span>
         </div>
         <div class="tier-body">
           <div class="tier-feature"><span class="check">✦</span> Product placement in curated guest welcome bags</div>
@@ -895,5 +939,16 @@
   </div>
 
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.tier').forEach(function(tier) {
+      var header = tier.querySelector('.tier-header');
+      if (!header) return;
+      header.addEventListener('click', function() {
+        tier.classList.toggle('expanded');
+      });
+    });
+  });
+</script>
 </body>
 </html>

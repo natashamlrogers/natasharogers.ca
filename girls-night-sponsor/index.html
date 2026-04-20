@@ -456,6 +456,93 @@
   @media print {
     body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding: 40px 24px 36px;
+    }
+    .hero h1 {
+      font-size: 34px;
+    }
+    .hero-sub {
+      font-size: 14px;
+    }
+    .hero-tag {
+      width: 100%;
+      text-align: center;
+      padding: 16px 20px;
+    }
+
+    .section {
+      padding: 36px 24px;
+    }
+    .section h2 {
+      font-size: 24px;
+    }
+
+    .stats-row {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .events-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .format-row {
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .audience-section {
+      padding: 36px 24px;
+    }
+    .audience-cols {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .tiers-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .tier.featured {
+      transform: none;
+    }
+
+    .cta-section {
+      grid-template-columns: 1fr;
+      padding: 36px 24px;
+      gap: 28px;
+    }
+    .cta-section h2 {
+      font-size: 24px;
+    }
+    .cta-contact {
+      min-width: unset;
+      width: 100%;
+      padding: 24px 20px;
+    }
+    .cta-contact .email {
+      font-size: 13px;
+      word-break: break-all;
+    }
+
+    .footer {
+      padding: 20px 24px;
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+    }
+    .footer-dot {
+      display: none;
+    }
+
+    .divider {
+      margin: 0 24px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -471,7 +558,6 @@
 
   <!-- ABOUT -->
   <div class="section">
-    <div class="section-label">About the Series</div>
     <h2>Where Women Come to Learn,<br/>Connect & Feel Empowered</h2>
     <p>YYC Girls Night University is Calgary's growing community of women who show up curious and leave more confident. Inspired by the success of our <strong>Investing 101</strong> launch which brought 46 women together at Two Rivers Distillery we're expanding into a three-part series covering the financial topics women want to talk about most.</p>
     <p style="margin-top:14px;">Each evening is moderated, conversational, and anything but a boring seminar. Think drinks, great people, and an expert in the room making intimidating topics finally feel accessible.</p>
@@ -494,7 +580,6 @@
 
   <!-- EVENTS -->
   <div class="section">
-    <div class="section-label">The 2026 Series</div>
     <h2>Three Evenings. Three Topics<br/>Women Are Ready to Talk About.</h2>
     <div class="events-grid">
       <div class="event-card">
@@ -517,7 +602,6 @@
 
   <!-- FORMAT -->
   <div class="section" style="background:#fff;">
-    <div class="section-label">Event Format</div>
     <h2>What Every Evening Looks Like</h2>
     <div class="format-row">
       <div class="format-item">
@@ -545,7 +629,6 @@
 
   <!-- AUDIENCE -->
   <div class="audience-section">
-    <div class="section-label">Who's in the Room</div>
     <h2 style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--wine);margin-bottom:8px;">Your Ideal Customer is Already Here</h2>
     <div class="audience-cols">
       <div class="audience-col">
@@ -575,7 +658,6 @@
 
   <!-- TIERS -->
   <div class="section">
-    <div class="section-label">Sponsorship Tiers</div>
     <h2>Find the Right<br/>Partnership for You</h2>
     <div class="tiers-grid">
 

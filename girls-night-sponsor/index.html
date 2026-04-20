@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>YYC Girls Night University – Sponsorship Opportunities</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blush:    #F2C4CE;
+    --rose:     #C97D8C;
+    --wine:     #7B3049;
+    --cream:    #FDF8F3;
+    --charcoal: #2A2226;
+    --warm-mid: #9E6B78;
+    --gold:     #C9A96E;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ─── PAGE WRAPPER ─── */
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--cream);
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--wine);
+    color: var(--cream);
+    padding: 60px 60px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 340px; height: 340px;
+    border-radius: 50%;
+    background: rgba(242,196,206,0.12);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(201,169,110,0.10);
+  }
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--blush);
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 1.1;
+    max-width: 540px;
+    margin-bottom: 18px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--blush);
+  }
+  .hero-sub {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(253,248,243,0.82);
+    max-width: 480px;
+    line-height: 1.7;
+  }
+  .hero-tag {
+    display: inline-block;
+    margin-top: 28px;
+    background: var(--gold);
+    color: var(--wine);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 2px;
+  }
+
+  /* ─── SECTION WRAPPER ─── */
+  .section {
+    padding: 52px 60px;
+  }
+  .section + .section {
+    border-top: 1px solid rgba(123,48,73,0.1);
+  }
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--rose);
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--wine);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+  .section p {
+    color: #4a3840;
+    font-size: 14px;
+    line-height: 1.75;
+    max-width: 700px;
+  }
+
+  /* ─── ABOUT STATS ─── */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 36px;
+  }
+  .stat-card {
+    background: var(--wine);
+    color: var(--cream);
+    padding: 28px 24px;
+    border-radius: 4px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--blush);
+    line-height: 1;
+    display: block;
+  }
+  .stat-label {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgba(253,248,243,0.75);
+    margin-top: 8px;
+    display: block;
+  }
+
+  /* ─── EVENTS ─── */
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .event-card {
+    border: 1.5px solid var(--blush);
+    border-radius: 4px;
+    padding: 28px 22px;
+    position: relative;
+    background: #fff;
+  }
+  .event-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--blush);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .event-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--wine);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .event-desc {
+    font-size: 13px;
+    color: #6a4d57;
+    line-height: 1.65;
+  }
+
+  /* ─── AUDIENCE ─── */
+  .audience-section {
+    background: #FBF0F3;
+    padding: 52px 60px;
+  }
+  .audience-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 28px;
+  }
+  .audience-col h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: var(--wine);
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  .audience-list {
+    list-style: none;
+  }
+  .audience-list li {
+    font-size: 13.5px;
+    color: #4a3840;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(123,48,73,0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .audience-list li::before {
+    content: '✦';
+    color: var(--rose);
+    font-size: 9px;
+    flex-shrink: 0;
+  }
+
+  /* ─── SPONSORSHIP TIERS ─── */
+  .tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 36px;
+  }
+  .tier {
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1.5px solid transparent;
+    background: #fff;
+  }
+  .tier.featured {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(123,48,73,0.12);
+  }
+  .tier-header {
+    padding: 22px 22px 18px;
+    background: var(--blush);
+    text-align: center;
+  }
+  .tier.featured .tier-header {
+    background: var(--wine);
+  }
+  .tier-name {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--wine);
+    font-weight: 500;
+  }
+  .tier.featured .tier-name {
+    color: var(--blush);
+  }
+  .tier-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--wine);
+    line-height: 1;
+    margin: 8px 0 4px;
+  }
+  .tier.featured .tier-price {
+    color: var(--cream);
+  }
+  .tier-per {
+    font-size: 11px;
+    color: var(--warm-mid);
+    letter-spacing: 1px;
+  }
+  .tier.featured .tier-per {
+    color: rgba(253,248,243,0.65);
+  }
+  .tier-body {
+    padding: 20px 22px 26px;
+  }
+  .tier-feature {
+    font-size: 12.5px;
+    color: #4a3840;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(123,48,73,0.08);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.45;
+  }
+  .tier-feature:last-child {
+    border-bottom: none;
+  }
+  .tier-feature .check {
+    color: var(--rose);
+    font-size: 11px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+  .tier-badge {
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  /* ─── FORMAT ─── */
+  .format-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .format-item {
+    text-align: center;
+    padding: 24px 16px;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid rgba(242,196,206,0.6);
+  }
+  .format-icon {
+    font-size: 26px;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .format-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--wine);
+    margin-bottom: 6px;
+  }
+  .format-desc {
+    font-size: 12px;
+    color: #7a5566;
+    line-height: 1.6;
+  }
+
+  /* ─── CTA ─── */
+  .cta-section {
+    background: var(--wine);
+    padding: 52px 60px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+  }
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--cream);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .cta-section p {
+    font-size: 14px;
+    color: rgba(253,248,243,0.72);
+    line-height: 1.7;
+  }
+  .cta-contact {
+    background: var(--blush);
+    color: var(--wine);
+    padding: 32px 36px;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 220px;
+    flex-shrink: 0;
+  }
+  .cta-contact .contact-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--rose);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .cta-contact .email {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--wine);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .cta-contact .web {
+    font-size: 12px;
+    color: var(--warm-mid);
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--charcoal);
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer span {
+    font-size: 11px;
+    color: rgba(253,248,243,0.4);
+    letter-spacing: 1px;
+  }
+  .footer-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--rose);
+    display: inline-block;
+  }
+
+  /* ─── DECORATIVE DIVIDER ─── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 60px;
+    padding: 0;
+  }
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(123,48,73,0.15);
+  }
+  .divider-gem {
+    color: var(--rose);
+    font-size: 12px;
+  }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">Calgary, Alberta · 2026 Sponsorship Opportunity</div>
+    <h1>YYC Girls Night<br/><em>University</em></h1>
+    <p class="hero-sub">A women's event series where Calgary women gather to learn real-life skills — in a relaxed, welcoming, and social setting.</p>
+    <span class="hero-tag">Partner With Us</span>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section">
+    <div class="section-label">About the Series</div>
+    <h2>Where Women Come to Learn,<br/>Connect & Feel Empowered</h2>
+    <p>YYC Girls Night University is Calgary's growing community of women who show up curious and leave more confident. Inspired by the success of our <strong>Investing 101</strong> launch — which brought 46 women together at Two Rivers Distillery — we're expanding into a three-part series covering the financial topics women want to talk about most.</p>
+    <p style="margin-top:14px;">Each evening is moderated, conversational, and anything but a boring seminar. Think drinks, great people, and an expert in the room making intimidating topics finally feel accessible.</p>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <span class="stat-num">46+</span>
+        <span class="stat-label">Women at our inaugural event</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Upcoming themed evenings</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Calgary women, real conversations</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENTS -->
+  <div class="section">
+    <div class="section-label">The 2026 Series</div>
+    <h2>Three Evenings. Three Topics<br/>Women Are Ready to Talk About.</h2>
+    <div class="events-grid">
+      <div class="event-card">
+        <div class="event-num">01</div>
+        <div class="event-title">Buying Your First Home</div>
+        <p class="event-desc">Mortgages, down payments, what no one tells you. Demystifying the Calgary real estate market for first-time buyers.</p>
+      </div>
+      <div class="event-card">
+        <div class="event-num">02</div>
+        <div class="event-title">Side Hustles That Actually Work</div>
+        <p class="event-desc">From passion to profit — how to launch, price, and grow a side income without burning out on your 9-to-5.</p>
+      </div>
+      <div class="event-card">
+        <div class="event-num">03</div>
+        <div class="event-title">Budgeting & Building Wealth</div>
+        <p class="event-desc">Practical budgeting frameworks, saving strategies, and how to stop living paycheck to paycheck for good.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORMAT -->
+  <div class="section" style="background:#fff;">
+    <div class="section-label">Event Format</div>
+    <h2>What Every Evening Looks Like</h2>
+    <div class="format-row">
+      <div class="format-item">
+        <span class="format-icon">🥂</span>
+        <div class="format-label">Social Hour</div>
+        <p class="format-desc">Guests arrive, grab a drink, and connect with the women around them</p>
+      </div>
+      <div class="format-item">
+        <span class="format-icon">🎙️</span>
+        <div class="format-label">Expert Talk</div>
+        <p class="format-desc">A moderated conversation with a Calgary expert — no lecture, just real talk</p>
+      </div>
+      <div class="format-item">
+        <span class="format-icon">🙋‍♀️</span>
+        <div class="format-label">Live Q&A</div>
+        <p class="format-desc">Audience-driven questions that turn the room into a two-way conversation</p>
+      </div>
+      <div class="format-item">
+        <span class="format-icon">✨</span>
+        <div class="format-label">Sponsor Spotlight</div>
+        <p class="format-desc">Your brand featured as a valued partner — authentically, not as an ad</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUDIENCE -->
+  <div class="audience-section">
+    <div class="section-label">Who's in the Room</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--wine);margin-bottom:8px;">Your Ideal Customer is Already Here</h2>
+    <div class="audience-cols">
+      <div class="audience-col">
+        <h3>Our Audience</h3>
+        <ul class="audience-list">
+          <li>Women aged 25–42, Calgary-based</li>
+          <li>Professionals, entrepreneurs & creatives</li>
+          <li>First-time homebuyers & renters saving to buy</li>
+          <li>Side hustlers & aspiring business owners</li>
+          <li>Women actively working on their finances</li>
+          <li>Community-oriented & word-of-mouth driven</li>
+        </ul>
+      </div>
+      <div class="audience-col">
+        <h3>Why Sponsor This Series</h3>
+        <ul class="audience-list">
+          <li>Reach a highly engaged, trust-driven audience</li>
+          <li>Authentic brand integration — not just a banner</li>
+          <li>Position your brand as a community champion</li>
+          <li>Direct access through speaking opportunities</li>
+          <li>Social media exposure to the YYC women's community</li>
+          <li>Be associated with education & empowerment</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIERS -->
+  <div class="section">
+    <div class="section-label">Sponsorship Tiers</div>
+    <h2>Find the Right<br/>Partnership for You</h2>
+    <div class="tiers-grid">
+
+      <!-- BRONZE -->
+      <div class="tier">
+        <div class="tier-header">
+          <div class="tier-name">Community</div>
+          <div class="tier-price">$500</div>
+          <div class="tier-per">per event</div>
+        </div>
+        <div class="tier-body">
+          <div class="tier-feature"><span class="check">✦</span> Logo on event materials & signage</div>
+          <div class="tier-feature"><span class="check">✦</span> Social media mention (1 post per event)</div>
+          <div class="tier-feature"><span class="check">✦</span> Items in guest welcome bags</div>
+          <div class="tier-feature"><span class="check">✦</span> 2 complimentary tickets per event</div>
+        </div>
+      </div>
+
+      <!-- GOLD - FEATURED -->
+      <div class="tier featured">
+        <div class="tier-header">
+          <span class="tier-badge">Most Popular</span>
+          <div class="tier-name">Presenting</div>
+          <div class="tier-price">$1,500</div>
+          <div class="tier-per">per event</div>
+        </div>
+        <div class="tier-body">
+          <div class="tier-feature"><span class="check">✦</span> Named as Presenting Sponsor of the evening</div>
+          <div class="tier-feature"><span class="check">✦</span> 5-minute branded intro before expert talk</div>
+          <div class="tier-feature"><span class="check">✦</span> Logo on all promotional assets & emails</div>
+          <div class="tier-feature"><span class="check">✦</span> 3 dedicated social posts (pre + post event)</div>
+          <div class="tier-feature"><span class="check">✦</span> 4 complimentary tickets</div>
+          <div class="tier-feature"><span class="check">✦</span> Branded table or activation space at venue</div>
+        </div>
+      </div>
+
+      <!-- SERIES -->
+      <div class="tier">
+        <div class="tier-header">
+          <div class="tier-name">Series Partner</div>
+          <div class="tier-price">$3,500</div>
+          <div class="tier-per">all 3 events</div>
+        </div>
+        <div class="tier-body">
+          <div class="tier-feature"><span class="check">✦</span> Everything in Presenting, across all 3 nights</div>
+          <div class="tier-feature"><span class="check">✦</span> Expert speaker opportunity (your team on stage)</div>
+          <div class="tier-feature"><span class="check">✦</span> Co-branded series name & logo placement</div>
+          <div class="tier-feature"><span class="check">✦</span> Featured in post-event recap blog & email</div>
+          <div class="tier-feature"><span class="check">✦</span> 6 complimentary tickets across the series</div>
+          <div class="tier-feature"><span class="check">✦</span> Custom partnership package available</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div>
+      <h2>Let's Build Something<br/>Great Together</h2>
+      <p>We believe the best sponsorships feel like a natural fit — not an ad. If your business serves Calgary women and aligns with home buying, side hustles, or personal finance, we'd love to chat about how we can create real value for your brand and our community.</p>
+    </div>
+    <div class="cta-contact">
+      <span class="contact-label">Get in Touch</span>
+      <span class="email">yycgirlsnight@gmail.com</span>
+      <span class="web">yycgirlsnight.ca</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>© 2026 YYC Girls Night · Calgary, AB</span>
+    <span class="footer-dot"></span>
+    <span>Girls Night University Sponsorship Package</span>
+  </div>
+
+</div>
+</body>
+</html>

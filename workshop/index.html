@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Resume Workshop – Register Now</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --paper: #fdf5f7;
+      --mist:  #f2dde5;
+      --ink:   #1a1118;
+      --deep:  #3b1f2b;
+      --rose:  #b83866;
+      --pink:  #e8a0b8;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      background: var(--paper);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #3b1f2b 0%, #5c2d42 55%, #7a3558 100%);
+      color: #fff;
+      padding: 56px 24px 52px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: 'NR';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22rem;
+      font-weight: 300;
+      color: rgba(232,160,184,0.05);
+      position: absolute;
+      bottom: -5rem; right: -3rem;
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 52px;
+      background: var(--paper);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(232,160,184,0.15);
+      border: 1px solid rgba(232,160,184,0.35);
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      margin-bottom: 22px;
+      color: var(--pink);
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      color: #fdf5f7;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--pink);
+    }
+    .hero p {
+      font-size: 1rem;
+      opacity: 0.8;
+      max-width: 500px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+    .event-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .event-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      background: rgba(232,160,184,0.12);
+      border: 1px solid rgba(232,160,184,0.25);
+      border-radius: 6px;
+      padding: 8px 16px;
+      color: rgba(253,245,247,0.9);
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 44px 20px 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    @media (max-width: 680px) {
+      .main { grid-template-columns: 1fr; }
+    }
+
+    /* ── CARDS ── */
+    .card {
+      background: #fff;
+      border-radius: 2px;
+      box-shadow: 0 2px 20px rgba(59,31,43,0.07);
+      padding: 32px 28px;
+    }
+    .card-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .card-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rose);
+      opacity: 0.2;
+    }
+    .card h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 300;
+      color: var(--deep);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    /* ── FORM ── */
+    .form-group { margin-bottom: 18px; }
+    label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--deep);
+      opacity: 0.75;
+      margin-bottom: 7px;
+    }
+    label .req { color: var(--rose); margin-left: 2px; }
+    input, select {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid rgba(59,31,43,0.18);
+      border-radius: 2px;
+      font-size: 0.95rem;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      color: var(--ink);
+      background: var(--paper);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+    input:focus, select:focus {
+      border-color: var(--rose);
+      box-shadow: 0 0 0 3px rgba(184,56,102,0.1);
+      background: #fff;
+    }
+    input::placeholder { color: rgba(26,17,24,0.3); }
+    select { appearance: none; cursor: pointer; }
+    .select-wrap { position: relative; }
+    .select-wrap::after {
+      content: '▾';
+      position: absolute;
+      right: 14px; top: 50%;
+      transform: translateY(-50%);
+      color: var(--rose);
+      pointer-events: none;
+      font-size: 0.9rem;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 13px;
+      background: var(--deep);
+      color: var(--paper);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 6px;
+    }
+    .btn:hover { background: var(--rose); }
+
+    .privacy-note {
+      font-size: 0.72rem;
+      color: rgba(26,17,24,0.35);
+      text-align: center;
+      margin-top: 12px;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── SUCCESS STATE ── */
+    #success-state { display: none; }
+    .success-header { text-align: center; margin-bottom: 22px; }
+    .success-icon {
+      width: 56px; height: 56px;
+      background: var(--mist);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 14px;
+    }
+    #success-state h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--deep);
+      margin-bottom: 6px;
+    }
+    #success-state p {
+      font-size: 0.88rem;
+      color: rgba(26,17,24,0.65);
+      line-height: 1.6;
+    }
+    .success-name { color: var(--rose); font-style: italic; }
+
+    .cal-section {
+      background: var(--mist);
+      border-left: 3px solid var(--rose);
+      padding: 16px 18px;
+      margin: 20px 0;
+    }
+    .cal-section p { font-size: 0.82rem; color: var(--deep); margin-bottom: 12px; font-weight: 500; letter-spacing: 0.04em; }
+    .cal-btn {
+      display: inline-block;
+      padding: 9px 20px;
+      background: var(--deep);
+      color: var(--paper);
+      border-radius: 2px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+    .cal-btn:hover { background: var(--rose); }
+
+    /* ── ZOOM DETAILS (post-registration) ── */
+    .zoom-reveal {
+      background: var(--deep);
+      border-radius: 2px;
+      padding: 20px 20px;
+      margin-top: 18px;
+    }
+    .zoom-reveal-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 14px;
+      opacity: 0.9;
+    }
+    .zoom-reveal-row {
+      display: flex;
+      gap: 10px;
+      font-size: 0.85rem;
+      margin-bottom: 9px;
+      align-items: flex-start;
+    }
+    .zoom-reveal-row:last-child { margin-bottom: 0; }
+    .zoom-key {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(232,160,184,0.6);
+      flex-shrink: 0;
+      min-width: 76px;
+      padding-top: 2px;
+    }
+    .zoom-val { color: rgba(253,245,247,0.9); word-break: break-all; line-height: 1.5; }
+    .zoom-val a { color: var(--pink); text-decoration: underline; text-underline-offset: 3px; }
+    .zoom-val.mono { font-family: monospace; font-size: 0.95rem; letter-spacing: 0.06em; }
+
+    /* ── CHECKLIST ── */
+    .checklist { list-style: none; margin-top: 4px; }
+    .checklist li {
+      display: flex;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--mist);
+      font-size: 0.9rem;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li strong { color: var(--deep); display: block; margin-bottom: 3px; font-weight: 500; }
+    .checklist .num {
+      flex-shrink: 0;
+      width: 26px; height: 26px;
+      background: var(--deep);
+      color: var(--paper);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--deep);
+      text-align: center;
+      padding: 20px;
+      font-size: 0.72rem;
+      color: rgba(253,245,247,0.45);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    footer span { color: var(--pink); opacity: 0.7; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<div class="hero">
+  <div class="hero-badge">Free Virtual Workshop</div>
+  <h1>AI-Powered<br>Resume <em>Customization</em><br>Workshop</h1>
+  <p>Learn how to use AI tools to tailor your resume for specific job postings.</p>
+  <div class="event-meta">
+    <div class="event-meta-item">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Thursday, April 30, 2026
+    </div>
+    <div class="event-meta-item">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      12:00 – 12:30 PM Mountain Time
+    </div>
+    <div class="event-meta-item">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.9L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+      Zoom · Free to Attend
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ MAIN ═══════════════ -->
+<div class="main">
+
+  <!-- LEFT: REGISTRATION FORM -->
+  <div class="card">
+    <div class="card-label">Register</div>
+    <h2>Save Your<br><em>Spot</em></h2>
+
+    <!-- FORM -->
+    <div id="form-state">
+      <form id="reg-form" onsubmit="handleSubmit(event)" novalidate>
+        <div class="form-group">
+          <label for="name">Full Name <span class="req">*</span></label>
+          <input type="text" id="name" placeholder="Jane Smith" required autocomplete="name"/>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address <span class="req">*</span></label>
+          <input type="email" id="email" placeholder="jane@example.com" required autocomplete="email"/>
+        </div>
+        <div class="form-group">
+          <label for="industry">Target Industry <span class="req">*</span></label>
+          <div class="select-wrap">
+            <select id="industry" required>
+              <option value="" disabled selected>Select your industry…</option>
+              <option>Technology &amp; Software</option>
+              <option>Healthcare &amp; Nursing</option>
+              <option>Finance &amp; Accounting</option>
+              <option>Marketing &amp; Communications</option>
+              <option>Education &amp; Training</option>
+              <option>Engineering</option>
+              <option>Sales &amp; Business Development</option>
+              <option>Human Resources</option>
+              <option>Legal &amp; Compliance</option>
+              <option>Nonprofit &amp; Social Services</option>
+              <option>Operations &amp; Logistics</option>
+              <option>Creative &amp; Design</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn">Register &amp; Get Calendar Invite →</button>
+      </form>
+      <p class="privacy-note">🔒 Your details are used only to send your workshop info.</p>
+    </div>
+
+    <!-- SUCCESS STATE -->
+    <div id="success-state">
+      <div class="success-header">
+        <div class="success-icon">
+          <svg width="26" height="26" fill="none" stroke="#b83866" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <h3>You're in, <span class="success-name" id="success-name"></span>!</h3>
+        <p>See you <strong>Thursday, April 30 at 12:00 PM MT</strong>.<br>Here's what to do next:</p>
+      </div>
+
+      <div class="cal-section">
+        <p>📅 Add the workshop to your calendar</p>
+        <button class="cal-btn" onclick="downloadICS()">Download Calendar Invite (.ics)</button>
+      </div>
+
+      <!-- ZOOM DETAILS — revealed only after registration -->
+      <div class="zoom-reveal">
+        <div class="zoom-reveal-label">Your Zoom Meeting Details</div>
+        <div class="zoom-reveal-row">
+          <span class="zoom-key">Join Link</span>
+          <span class="zoom-val">
+            <a href="https://us05web.zoom.us/j/87109479728?pwd=YOnfm9AT50kPM6cywTPzjYHkoxh8h1.1" target="_blank" rel="noopener">
+              https://us05web.zoom.us/j/87109479728
+            </a>
+          </span>
+        </div>
+        <div class="zoom-reveal-row">
+          <span class="zoom-key">Meeting ID</span>
+          <span class="zoom-val mono">871 0947 9728</span>
+        </div>
+        <div class="zoom-reveal-row">
+          <span class="zoom-key">Passcode</span>
+          <span class="zoom-val mono">4Gzt8N</span>
+        </div>
+        <div class="zoom-reveal-row">
+          <span class="zoom-key">Host</span>
+          <span class="zoom-val">Natasha Rogers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: CHECKLIST -->
+  <div class="card">
+    <div class="card-label">Prepare</div>
+    <h2>Pre-Event<br><em>Checklist</em></h2>
+    <p style="font-size:0.85rem; color:rgba(26,17,24,0.55); margin-bottom:18px; line-height:1.6;">Before you join this workshop, make sure you have:</p>
+    <ul class="checklist">
+      <li>
+        <span class="num">1</span>
+        <span>
+          <strong>Register for your AI partner of choice</strong>
+          Sign up for <a href="https://claude.ai" target="_blank" style="color:var(--rose);">Claude</a>, <a href="https://chat.openai.com" target="_blank" style="color:var(--rose);">ChatGPT</a>, <a href="https://gemini.google.com" target="_blank" style="color:var(--rose);">Gemini</a>, or any AI tool you'd like to use. A free account works great!
+        </span>
+      </li>
+      <li>
+        <span class="num">2</span>
+        <span>
+          <strong>Ensure you have your resume handy</strong>
+          Save a copy somewhere easy to access so you can upload it directly into your AI tool during the workshop.
+        </span>
+      </li>
+      <li>
+        <span class="num">3</span>
+        <span>
+          <strong>Find a job you're interested in</strong>
+          Locate a real job posting you want to customize your resume for and have the full job description ready to paste.
+        </span>
+      </li>
+    </ul>
+  </div>
+
+</div><!-- end .main -->
+
+<footer>
+  Hosted by <span>Natasha Rogers</span> &nbsp;·&nbsp; AI Resume Customization Workshop &nbsp;·&nbsp; April 30, 2026
+</footer>
+
+<!-- ═══════════════ SCRIPTS ═══════════════ -->
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const name     = document.getElementById('name').value.trim();
+    const email    = document.getElementById('email').value.trim();
+    const industry = document.getElementById('industry').value;
+
+    if (!name || !email || !industry) {
+      alert('Please fill in all fields before registering.');
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    // Show success state
+    document.getElementById('form-state').style.display  = 'none';
+    document.getElementById('success-state').style.display = 'block';
+    document.getElementById('success-name').textContent  = name.split(' ')[0];
+
+    // Auto-trigger .ics download
+    setTimeout(downloadICS, 500);
+
+    // Open mailto confirmation
+    setTimeout(() => openMailto(name, email, industry), 1000);
+  }
+
+  function downloadICS() {
+    // April 30 2026 12:00–12:30 PM MDT = 18:00–18:30 UTC
+    const icsContent = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//AI Resume Workshop//EN',
+      'CALSCALE:GREGORIAN',
+      'METHOD:PUBLISH',
+      'BEGIN:VEVENT',
+      'UID:ai-resume-workshop-20260430@natasharogers',
+      'DTSTAMP:20260428T000000Z',
+      'DTSTART:20260430T180000Z',
+      'DTEND:20260430T183000Z',
+      'SUMMARY:AI-Powered Resume Customization Workshop',
+      'DESCRIPTION:Join Natasha Rogers for a free workshop on using AI tools to customize your resume for specific job postings.\\n\\nJoin Zoom Meeting:\\nhttps://us05web.zoom.us/j/87109479728?pwd=YOnfm9AT50kPM6cywTPzjYHkoxh8h1.1\\n\\nMeeting ID: 871 0947 9728\\nPasscode: 4Gzt8N',
+      'LOCATION:Zoom – https://us05web.zoom.us/j/87109479728',
+      'URL:https://us05web.zoom.us/j/87109479728?pwd=YOnfm9AT50kPM6cywTPzjYHkoxh8h1.1',
+      'ORGANIZER;CN=Natasha Rogers:mailto:natashaml.rogers@gmail.com',
+      'STATUS:CONFIRMED',
+      'SEQUENCE:0',
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n');
+
+    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = 'AI-Resume-Workshop-Apr30.ics';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function openMailto(name, email, industry) {
+    const subject = encodeURIComponent("You're Registered! AI Resume Workshop – April 30, 2026");
+    const body = encodeURIComponent(
+`Hi ${name},
+
+You're all set for the AI-Powered Resume Customization Workshop!
+
+📅 Date: Thursday, April 30, 2026
+⏰ Time: 12:00 PM – 12:30 PM Mountain Time
+🎥 Platform: Zoom
+
+JOIN THE MEETING:
+https://us05web.zoom.us/j/87109479728?pwd=YOnfm9AT50kPM6cywTPzjYHkoxh8h1.1
+
+Meeting ID: 871 0947 9728
+Passcode: 4Gzt8N
+
+━━━━━━━━━━━━━━━━━━━━━━
+PRE-EVENT CHECKLIST
+━━━━━━━━━━━━━━━━━━━━━━
+Before you join, please make sure to:
+
+✅ 1. Register for your AI partner of choice — Claude (claude.ai), ChatGPT (chat.openai.com), Gemini (gemini.google.com), or any AI tool you'd like to use. A free account works!
+
+✅ 2. Ensure you have your resume handy — save a copy somewhere accessible so you can upload it into your AI during the workshop.
+
+✅ 3. Find a job you're interested in — locate a real job posting you want to customize your resume for and copy the full job description.
+
+━━━━━━━━━━━━━━━━━━━━━━
+Your registered industry: ${industry}
+
+See you on April 30th!
+
+— Natasha Rogers`
+    );
+
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+  }
+</script>
+
+</body>
+</html>

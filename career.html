@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Journey | Natasha Rogers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --paper: #fdf5f7;
+    --mist:  #f2dde5;
+    --ink:   #1a1118;
+    --deep:  #3b1f2b;
+    --rose:  #b83866;
+    --pink:  #e8a0b8;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { background: var(--paper); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 4rem; background: rgba(253,245,247,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(184,56,102,0.15); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; letter-spacing: 0.08em; color: var(--deep); text-decoration: none; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); text-decoration: none; opacity: 0.6; transition: opacity 0.2s; }
+  .nav-links a:hover, .nav-links a.active { opacity: 1; }
+
+  /* PAGE HEADER */
+  .page-header { background: var(--deep); padding: 9rem 0 5rem; }
+  .page-header .container { max-width: 1100px; margin: 0 auto; padding: 0 4rem; }
+  .page-header .section-label { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; }
+  .page-header .section-label::after { content: ''; flex: 1; height: 1px; background: var(--pink); opacity: 0.3; }
+  .page-header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 4vw, 4.5rem); font-weight: 300; color: var(--paper); line-height: 1.1; }
+  .page-header p { font-size: 1rem; line-height: 1.8; color: rgba(253,245,247,0.7); margin-top: 1.2rem; max-width: 520px; }
+
+  /* SHARED */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 4rem; }
+  .section-label { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--rose); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--rose); opacity: 0.25; }
+
+  /* TIMELINE */
+  #experience { background: var(--deep); padding: 6rem 0; }
+  #experience h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 300; color: var(--paper); margin-bottom: 3rem; }
+  .timeline { position: relative; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: rgba(232,160,184,0.2); }
+  .timeline-item { padding-left: 3rem; margin-bottom: 4rem; position: relative; }
+  .timeline-dot { position: absolute; left: -5px; top: 0.4rem; width: 11px; height: 11px; border-radius: 50%; background: var(--pink); border: 2px solid var(--deep); }
+  .timeline-date { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); margin-bottom: 0.4rem; }
+  .timeline-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--paper); margin-bottom: 0.2rem; line-height: 1.3; }
+  .timeline-company { font-size: 0.8rem; color: rgba(253,245,247,0.55); margin-bottom: 1rem; letter-spacing: 0.05em; }
+  .timeline-bullets { list-style: none; }
+  .timeline-bullets li { font-size: 0.88rem; line-height: 1.7; color: rgba(253,245,247,0.8); padding: 0.4rem 0 0.4rem 1.4rem; position: relative; border-bottom: 1px solid rgba(232,160,184,0.1); }
+  .timeline-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--pink); font-size: 0.7rem; top: 0.55rem; }
+
+  /* BACK LINK */
+  .back-bar { background: var(--mist); padding: 1.4rem 0; }
+  .back-link { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--deep); text-decoration: none; opacity: 0.7; transition: opacity 0.2s; }
+  .back-link:hover { opacity: 1; }
+
+  /* FOOTER */
+  footer { background: var(--ink); padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; }
+  .footer-copy { font-size: 0.72rem; color: rgba(253,245,247,0.35); letter-spacing: 0.1em; }
+  .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: rgba(253,245,247,0.55); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { display: none; }
+    .container { padding: 0 2rem; }
+    .page-header .container { padding: 0 2rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Natasha Rogers</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#experience">Experience</a></li>
+    <li><a href="career.html" class="active">Career Journey</a></li>
+    <li><a href="index.html#impact">Impact</a></li>
+    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container">
+    <div class="section-label">Full Career History</div>
+    <h1>Career<br><em style="font-style:italic;color:var(--pink)">Journey</em></h1>
+    <p>A decade-plus of building programs, leading teams, and creating experiences that move people and business forward.</p>
+  </div>
+</div>
+
+<!-- BACK BAR -->
+<div class="back-bar">
+  <div class="container">
+    <a class="back-link" href="index.html">← Back to Portfolio</a>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label" style="color:var(--pink);margin-bottom:1rem">
+      <span style="color:var(--pink)">Experience</span>
+      <span style="flex:1;height:1px;background:var(--pink);opacity:0.3;display:block;margin-left:0.8rem"></span>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2025 – 2026</div>
+        <div class="timeline-title">Marketing Events Manager</div>
+        <div class="timeline-company">Bankjoy · Remote (Calgary, AB)</div>
+        <ul class="timeline-bullets">
+          <li>Drove $1M+ in influenced pipeline; accelerated 2 early renewals and contributed to closing 3 new accounts</li>
+          <li>Increased customer conference attendance YoY by 30% while reducing budget and securing higher sponsorship revenue</li>
+          <li>Developed event promotion strategies across social, email, and personalized invitations tracked in HubSpot</li>
+          <li>Increased customer NPS scores by 5% through events tied directly to retention and satisfaction goals</li>
+          <li>Managed full event lifecycle from concept through onsite execution, with cross-functional alignment across sales, CS, leadership, and sponsors</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2024</div>
+        <div class="timeline-title">Director, Content Product Management &amp; Webinar Strategy</div>
+        <div class="timeline-company">Future B2B (formerly ActualTech Media) · Remote (Calgary, AB)</div>
+        <ul class="timeline-bullets">
+          <li>Assumed Product Management leadership during organizational restructuring post-acquisition</li>
+          <li>Streamlined content product catalogue with focus on webinar offerings across newly combined business units</li>
+          <li>Gathered stakeholder buy-in across sales, operations, and delivery teams for successful webinar product launch</li>
+          <li>Established pricing standards and evaluated margins to ensure profitability</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2015 – 2024</div>
+        <div class="timeline-title">Senior Director of Webinar Services</div>
+        <div class="timeline-company">ActualTech Media · Remote (Calgary, AB)</div>
+        <ul class="timeline-bullets">
+          <li>Joined as employee #1 and led 300%+ staff growth over 8 years; directly managed a team of 7</li>
+          <li>Scaled webinar program from 1 to 400+ annual events (433% growth), transforming it into the company's primary revenue source</li>
+          <li>Built strategic partnerships with enterprise tech clients including Rubrik, Cisco, Red Hat, and NetApp</li>
+          <li>Partnered with sales, product marketing, and demand gen to align webinar strategy with GTM motions and revenue targets</li>
+          <li>Spearheaded planning and onsite execution of tradeshow booths, including coordination of hybrid webinar events</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2014 – 2015</div>
+        <div class="timeline-title">Marketing Coordinator &amp; Stylist</div>
+        <div class="timeline-company">espy experience · Calgary, AB</div>
+        <ul class="timeline-bullets">
+          <li>Promoted from Stylist to Marketing Coordinator to oversee social media, email promotion, and special events</li>
+          <li>Increased special event fundraising totals by 100%</li>
+          <li>Created a successful inclusive social media campaign that engaged new customer segments</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2012 – 2014</div>
+        <div class="timeline-title">Residence Life Coordinator</div>
+        <div class="timeline-company">Mount Royal University · Calgary, AB</div>
+        <ul class="timeline-bullets">
+          <li>Directly supervised 20 student staff; planned and led a 2-week staff training program</li>
+          <li>Participated in a 24/7 on-call rotation responding to student crises, emergency services, and facility issues</li>
+          <li>Co-developed the code of conduct and student staff handbook; covered two senior roles simultaneously for 6 weeks</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2011</div>
+        <div class="timeline-title">Student Life Coordinator</div>
+        <div class="timeline-company">Bader College, Queen's University · Herstmonceux, United Kingdom</div>
+        <ul class="timeline-bullets">
+          <li>Managed student and faculty programming at a Canadian institution abroad</li>
+          <li>Led activity trips and field studies across three countries with 160 students</li>
+          <li>Led incident response team including on-call rotation and follow-up</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Natasha Rogers</div>
+  <div class="footer-copy">Event Specialist · Strategic Leader · Calgary, AB</div>
+</footer>
+
+</body>
+</html>

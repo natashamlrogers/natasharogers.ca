@@ -100,7 +100,8 @@
   .skill-tag.proficient { background: var(--mist); border-color: var(--mist); }
 
   /* GALLERY */
-  .gallery-section { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--mist); }
+  #gallery { background: var(--paper); padding: 5rem 0; }
+  #gallery h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 300; color: var(--deep); margin-bottom: 2rem; }
   .gallery-video-wrap { margin-top: 1.2rem; margin-bottom: 0.6rem; background: var(--ink); overflow: hidden; }
   .gallery-video-wrap video { width: 100%; display: block; max-height: 480px; object-fit: cover; }
   .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-top: 0.6rem; }
@@ -109,6 +110,28 @@
   .gallery-item:hover img { transform: scale(1.06); }
   .gallery-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; color: var(--deep); opacity: 0.35; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; }
   .gallery-placeholder svg { width: 2rem; height: 2rem; stroke: currentColor; fill: none; stroke-width: 1.5; }
+
+  /* EVENTS ACCORDION */
+  .events-list { display: flex; flex-direction: column; }
+  .event-item { border-top: 1px solid rgba(232,160,184,0.15); }
+  .event-item:last-child { border-bottom: 1px solid rgba(232,160,184,0.15); }
+  .event-header { display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 0; cursor: pointer; gap: 1rem; user-select: none; }
+  .event-header:hover .event-name { color: var(--pink); }
+  .event-name { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; color: var(--paper); line-height: 1.2; transition: color 0.2s; }
+  .event-toggle { width: 26px; height: 26px; border: 1px solid rgba(232,160,184,0.35); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s, border-color 0.2s; }
+  .event-toggle svg { stroke: var(--pink); transition: transform 0.3s ease; }
+  .event-item.open .event-toggle { background: var(--pink); border-color: var(--pink); }
+  .event-item.open .event-toggle svg { stroke: var(--deep); transform: rotate(45deg); }
+  .event-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .event-body-inner { padding: 0 0 1.6rem 0; }
+  .event-body-inner p { font-size: 0.88rem; line-height: 1.85; color: rgba(253,245,247,0.78); margin-bottom: 0.8rem; }
+  .event-body-inner ul { list-style: none; }
+  .event-body-inner ul li { font-size: 0.85rem; line-height: 1.7; color: rgba(253,245,247,0.72); padding: 0.3rem 0 0.3rem 1.4rem; position: relative; border-bottom: 1px solid rgba(232,160,184,0.07); }
+  .event-body-inner ul li::before { content: '→'; position: absolute; left: 0; color: var(--pink); font-size: 0.7rem; top: 0.5rem; }
+  .career-link-row { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(232,160,184,0.15); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .career-link-text { font-size: 0.88rem; color: rgba(253,245,247,0.6); }
+  .career-link-btn { display: inline-flex; align-items: center; gap: 0.8rem; background: transparent; border: 1px solid rgba(232,160,184,0.4); color: var(--pink); padding: 0.8rem 1.6rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, border-color 0.2s, color 0.2s; }
+  .career-link-btn:hover { background: var(--pink); border-color: var(--pink); color: var(--deep); }
 
   /* LIGHTBOX */
   .lightbox { display: none; position: fixed; inset: 0; background: rgba(26,17,24,0.96); z-index: 999; align-items: center; justify-content: center; padding: 2rem; }
@@ -173,6 +196,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="career.html">Career Journey</a></li>
     <li><a href="#impact">Impact</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -250,42 +274,225 @@
       </div>
     </div>
 
-    <!-- PHOTO GALLERY -->
-    <div class="gallery-section">
-      <div class="section-label" style="margin-bottom:1rem">Photo Gallery</div>
-      <div class="gallery-video-wrap">
-        <video controls preload="metadata">
-          <source src="videos/gallery-video.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="gallery-grid">
-        <div class="gallery-item" onclick="openLightbox('images/gallery-1.jpg')">
-          <img src="images/gallery-1.jpg" alt="Gallery photo 1" onerror="this.style.display='none'">
-          <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 1</span></div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label label-on-dark">Experience</div>
+    <h2 style="color:var(--paper);margin-bottom:0.5rem">Events I've Delivered</h2>
+    <p style="font-size:0.9rem;color:rgba(253,245,247,0.6);margin-bottom:2.5rem;line-height:1.7">Click any event type to learn more about how I approach it.</p>
+    <div class="events-list">
+
+      <div class="event-item">
+        <div class="event-header" onclick="toggleEvent(this)">
+          <span class="event-name">Customer Conference</span>
+          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
         </div>
-        <div class="gallery-item" onclick="openLightbox('images/gallery-2.jpg')">
-          <img src="images/gallery-2.jpg" alt="Gallery photo 2" onerror="this.style.display='none'">
-          <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 2</span></div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox('images/gallery-3.jpg')">
-          <img src="images/gallery-3.jpg" alt="Gallery photo 3" onerror="this.style.display='none'">
-          <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 3</span></div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox('images/gallery-4.jpg')">
-          <img src="images/gallery-4.jpg" alt="Gallery photo 4" onerror="this.style.display='none'">
-          <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 4</span></div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox('images/gallery-5.jpg')">
-          <img src="images/gallery-5.jpg" alt="Gallery photo 5" onerror="this.style.display='none'">
-          <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 5</span></div>
-        </div>
-        <div class="gallery-item" onclick="openLightbox('images/gallery-6.jpg')">
-          <img src="images/gallery-6.jpg" alt="Gallery photo 6" onerror="this.style.display='none'">
-          <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 6</span></div>
+        <div class="event-body">
+          <div class="event-body-inner">
+            <p>Flagship annual customer events that deepen relationships, drive retention, and create memorable brand experiences. At Bankjoy, drove 30% YoY attendance growth while simultaneously reducing budget and securing higher sponsorship revenue.</p>
+            <ul>
+              <li>Full lifecycle ownership from concept and venue selection through onsite execution and post-event reporting</li>
+              <li>Cross-functional alignment across sales, customer success, leadership, and sponsors</li>
+              <li>Contributed directly to $1M+ influenced pipeline, 2 accelerated renewals, and 3 new account closures</li>
+              <li>Event experience tied to a 5-point increase in customer NPS scores</li>
+            </ul>
+          </div>
         </div>
       </div>
+
+      <div class="event-item">
+        <div class="event-header" onclick="toggleEvent(this)">
+          <span class="event-name">Trade Show Booth Presence</span>
+          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="event-body">
+          <div class="event-body-inner">
+            <p>End-to-end coordination of onsite tradeshow booth presence for enterprise technology events, integrated with broader demand generation strategy to maximize lead capture and sponsor ROI.</p>
+            <ul>
+              <li>Vendor management, booth logistics, staffing, and onsite coordination</li>
+              <li>Integrated with digital demand generation campaigns for full-funnel impact</li>
+              <li>Enterprise client partnerships including Rubrik, Cisco, Red Hat, and NetApp</li>
+              <li>Coordinated hybrid elements to extend reach beyond the physical event footprint</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-header" onclick="toggleEvent(this)">
+          <span class="event-name">Customer Advisory Board</span>
+          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="event-body">
+          <div class="event-body-inner">
+            <p>Strategic advisory sessions that give enterprise clients a voice in product and strategy while strengthening executive-level relationships and reinforcing long-term partnership value.</p>
+            <ul>
+              <li>Program design, facilitation planning, and logistics coordination</li>
+              <li>Alignment with customer success, product, and sales leadership to shape agenda</li>
+              <li>Supports retention strategy and creates high-trust touchpoints with key accounts</li>
+              <li>Structures post-event follow-through to ensure commitments are actioned</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-header" onclick="toggleEvent(this)">
+          <span class="event-name">Company Offsite</span>
+          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="event-body">
+          <div class="event-body-inner">
+            <p>Internal leadership and team gatherings designed to foster strategic alignment, build culture, and energize distributed teams — particularly impactful in remote-first organizations.</p>
+            <ul>
+              <li>Venue sourcing, travel logistics, and full program coordination</li>
+              <li>Agenda design balancing structured sessions with connection-building activities</li>
+              <li>Experience producing meaningful team moments across multiple distributed organizations</li>
+              <li>Post-event alignment documentation to translate energy into action</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-header" onclick="toggleEvent(this)">
+          <span class="event-name">Community Fundraising</span>
+          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="event-body">
+          <div class="event-body-inner">
+            <p>Mission-driven fundraising events that raise funds and awareness for charitable organizations through creative programming and community-centered experiences.</p>
+            <ul>
+              <li>Increased special event fundraising totals by 100% through strategic execution and creative programming</li>
+              <li>Volunteer event leadership with Making Changes / Dress for Success Calgary and Calgary Folk Music Festival</li>
+              <li>Experience managing large-scale safety, logistics, and volunteer teams at major community events</li>
+              <li>Inclusive campaign and event design that engages new audiences and expands community reach</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-header" onclick="toggleEvent(this)">
+          <span class="event-name">Student Staff Training</span>
+          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="event-body">
+          <div class="event-body-inner">
+            <p>Comprehensive multi-day training programs that equip student staff with the skills, knowledge, and confidence to support their peers and uphold community standards.</p>
+            <ul>
+              <li>Designed and led a 2-week training program for 20 student staff at Mount Royal University</li>
+              <li>Co-developed code of conduct, policy orientation, and student staff handbook</li>
+              <li>Curriculum covering leadership development, crisis response, and community building</li>
+              <li>Created engaging, high-retention programming that prepared staff for real-world challenges</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-header" onclick="toggleEvent(this)">
+          <span class="event-name">Orientation Week</span>
+          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="event-body">
+          <div class="event-body-inner">
+            <p>Large-scale welcome programming for incoming students that sets the tone for community belonging, academic success, and a positive institutional experience from day one.</p>
+            <ul>
+              <li>Coordinated multi-stakeholder programming across campus departments and student organizations</li>
+              <li>Inclusive event design that intentionally welcomed students from diverse backgrounds</li>
+              <li>Experience at both domestic (Mount Royal University) and international (Bader College, Queen's University, UK) institutions</li>
+              <li>Led activity trips and field studies across three countries with groups of 160+ students</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-header" onclick="toggleEvent(this)">
+          <span class="event-name">Hybrid Webinar Event</span>
+          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="event-body">
+          <div class="event-body-inner">
+            <p>Seamlessly integrated in-person event presence with live digital webinar delivery to expand audience reach, maximize content value, and increase sponsor ROI beyond physical attendance caps.</p>
+            <ul>
+              <li>Spearheaded hybrid event formats at ActualTech Media combining tradeshow booths with live-streamed sessions</li>
+              <li>Technical coordination across in-room AV, streaming platforms, and remote moderation</li>
+              <li>Simultaneous management of in-person and virtual attendee experiences</li>
+              <li>Achieved measurable uplift in total audience reach and sponsor deliverables by blending both formats</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-header" onclick="toggleEvent(this)">
+          <span class="event-name">Demand Generation Webinar Programs</span>
+          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+        </div>
+        <div class="event-body">
+          <div class="event-body-inner">
+            <p>B2B demand generation webinar programs built to drive pipeline, nurture prospects, and support revenue targets — scaled to operate at enterprise volume without sacrificing quality or ROI.</p>
+            <ul>
+              <li>Scaled from 1 to 400+ annual webinar events (433% growth) — became the company's #1 revenue driver</li>
+              <li>Generated $1M+ in influenced pipeline through strategic program alignment at Bankjoy</li>
+              <li>Partnered with sales, product marketing, and demand gen to align programs to GTM motions</li>
+              <li>Built operational frameworks, promotion strategies, and performance reporting to sustain scale</li>
+              <li>Platform expertise: Zoom, ON24, Notified, and custom analytics integrations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
     </div>
 
+    <div class="career-link-row">
+      <span class="career-link-text">Want to see the full work history?</span>
+      <a class="career-link-btn" href="career.html">View Career Journey →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-label">Photo Gallery</div>
+    <div class="gallery-video-wrap">
+      <video controls preload="metadata">
+        <source src="videos/gallery-video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox('images/gallery-1.jpg')">
+        <img src="images/gallery-1.jpg" alt="Gallery photo 1" onerror="this.style.display='none'">
+        <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 1</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/gallery-2.jpg')">
+        <img src="images/gallery-2.jpg" alt="Gallery photo 2" onerror="this.style.display='none'">
+        <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 2</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/gallery-3.jpg')">
+        <img src="images/gallery-3.jpg" alt="Gallery photo 3" onerror="this.style.display='none'">
+        <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 3</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/gallery-4.jpg')">
+        <img src="images/gallery-4.jpg" alt="Gallery photo 4" onerror="this.style.display='none'">
+        <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 4</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/gallery-5.jpg')">
+        <img src="images/gallery-5.jpg" alt="Gallery photo 5" onerror="this.style.display='none'">
+        <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 5</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('images/gallery-6.jpg')">
+        <img src="images/gallery-6.jpg" alt="Gallery photo 6" onerror="this.style.display='none'">
+        <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 6</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -294,94 +501,6 @@
   <button class="lightbox-close" onclick="closeLightbox(event)">×</button>
   <img class="lightbox-img" id="lightbox-img" src="" alt="Gallery photo">
 </div>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="container">
-    <div class="section-label label-on-dark">Experience</div>
-    <h2>Career Journey</h2>
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2025 – 2026</div>
-        <div class="timeline-title">Marketing Events Manager</div>
-        <div class="timeline-company">Bankjoy · Remote (Calgary, AB)</div>
-        <ul class="timeline-bullets">
-          <li>Drove $1M+ in influenced pipeline; accelerated 2 early renewals and contributed to closing 3 new accounts</li>
-          <li>Increased customer conference attendance YoY by 30% while reducing budget and securing higher sponsorship revenue</li>
-          <li>Developed event promotion strategies across social, email, and personalized invitations tracked in HubSpot</li>
-          <li>Increased customer NPS scores by 5% through events tied directly to retention and satisfaction goals</li>
-          <li>Managed full event lifecycle from concept through onsite execution, with cross-functional alignment across sales, CS, leadership, and sponsors</li>
-        </ul>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2024</div>
-        <div class="timeline-title">Director, Content Product Management &amp; Webinar Strategy</div>
-        <div class="timeline-company">Future B2B (formerly ActualTech Media) · Remote (Calgary, AB)</div>
-        <ul class="timeline-bullets">
-          <li>Assumed Product Management leadership during organizational restructuring post-acquisition</li>
-          <li>Streamlined content product catalogue with focus on webinar offerings across newly combined business units</li>
-          <li>Gathered stakeholder buy-in across sales, operations, and delivery teams for successful webinar product launch</li>
-          <li>Established pricing standards and evaluated margins to ensure profitability</li>
-        </ul>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2015 – 2024</div>
-        <div class="timeline-title">Senior Director of Webinar Services</div>
-        <div class="timeline-company">ActualTech Media · Remote (Calgary, AB)</div>
-        <ul class="timeline-bullets">
-          <li>Joined as employee #1 and led 300%+ staff growth over 8 years; directly managed a team of 7</li>
-          <li>Scaled webinar program from 1 to 400+ annual events (433% growth), transforming it into the company's primary revenue source</li>
-          <li>Built strategic partnerships with enterprise tech clients including Rubrik, Cisco, Red Hat, and NetApp</li>
-          <li>Partnered with sales, product marketing, and demand gen to align webinar strategy with GTM motions and revenue targets</li>
-          <li>Spearheaded planning and onsite execution of tradeshow booths, including coordination of hybrid webinar events</li>
-        </ul>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2014 – 2015</div>
-        <div class="timeline-title">Marketing Coordinator &amp; Stylist</div>
-        <div class="timeline-company">espy experience · Calgary, AB</div>
-        <ul class="timeline-bullets">
-          <li>Promoted from Stylist to Marketing Coordinator to oversee social media, email promotion, and special events</li>
-          <li>Increased special event fundraising totals by 100%</li>
-          <li>Created a successful inclusive social media campaign that engaged new customer segments</li>
-        </ul>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2012 – 2014</div>
-        <div class="timeline-title">Residence Life Coordinator</div>
-        <div class="timeline-company">Mount Royal University · Calgary, AB</div>
-        <ul class="timeline-bullets">
-          <li>Directly supervised 20 student staff; planned and led a 2-week staff training program</li>
-          <li>Participated in a 24/7 on-call rotation responding to student crises, emergency services, and facility issues</li>
-          <li>Co-developed the code of conduct and student staff handbook; covered two senior roles simultaneously for 6 weeks</li>
-        </ul>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">2011</div>
-        <div class="timeline-title">Student Life Coordinator</div>
-        <div class="timeline-company">Bader College, Queen's University · Herstmonceux, United Kingdom</div>
-        <ul class="timeline-bullets">
-          <li>Managed student and faculty programming at a Canadian institution abroad</li>
-          <li>Led activity trips and field studies across three countries with 160 students</li>
-          <li>Led incident response team including on-call rotation and follow-up</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- IMPACT -->
 <section id="impact">
@@ -580,6 +699,22 @@
     }
   }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+  function toggleEvent(header) {
+    const item = header.parentElement;
+    const body = header.nextElementSibling;
+    const isOpen = item.classList.contains('open');
+    // Close all open items
+    document.querySelectorAll('.event-item.open').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.event-body').style.maxHeight = '0';
+    });
+    // Open clicked item if it was closed
+    if (!isOpen) {
+      item.classList.add('open');
+      body.style.maxHeight = body.scrollHeight + 'px';
+    }
+  }
 </script>
 </body>
 </html>

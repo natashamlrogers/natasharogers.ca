@@ -108,7 +108,7 @@
   .gallery-item { aspect-ratio: 1; overflow: hidden; cursor: pointer; position: relative; background: var(--mist); }
   .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; display: block; }
   .gallery-item:hover img { transform: scale(1.06); }
-  .gallery-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; color: var(--deep); opacity: 0.35; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; }
+  .gallery-placeholder { position: absolute; inset: 0; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; color: var(--deep); opacity: 0.35; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; }
   .gallery-placeholder svg { width: 2rem; height: 2rem; stroke: currentColor; fill: none; stroke-width: 1.5; }
 
   /* EVENTS ACCORDION */
@@ -469,27 +469,27 @@
     </div>
     <div class="gallery-grid">
       <div class="gallery-item" onclick="openLightbox('images/gallery-1.jpg')">
-        <img src="images/gallery-1.jpg" alt="Gallery photo 1" onerror="this.style.display='none'">
+        <img src="images/gallery-1.jpg" alt="Gallery photo 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 1</span></div>
       </div>
       <div class="gallery-item" onclick="openLightbox('images/gallery-2.jpg')">
-        <img src="images/gallery-2.jpg" alt="Gallery photo 2" onerror="this.style.display='none'">
+        <img src="images/gallery-2.jpg" alt="Gallery photo 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 2</span></div>
       </div>
       <div class="gallery-item" onclick="openLightbox('images/gallery-3.jpg')">
-        <img src="images/gallery-3.jpg" alt="Gallery photo 3" onerror="this.style.display='none'">
+        <img src="images/gallery-3.jpg" alt="Gallery photo 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 3</span></div>
       </div>
       <div class="gallery-item" onclick="openLightbox('images/gallery-4.jpg')">
-        <img src="images/gallery-4.jpg" alt="Gallery photo 4" onerror="this.style.display='none'">
+        <img src="images/gallery-4.jpg" alt="Gallery photo 4" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 4</span></div>
       </div>
       <div class="gallery-item" onclick="openLightbox('images/gallery-5.jpg')">
-        <img src="images/gallery-5.jpg" alt="Gallery photo 5" onerror="this.style.display='none'">
+        <img src="images/gallery-5.jpg" alt="Gallery photo 5" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 5</span></div>
       </div>
       <div class="gallery-item" onclick="openLightbox('images/gallery-6.jpg')">
-        <img src="images/gallery-6.jpg" alt="Gallery photo 6" onerror="this.style.display='none'">
+        <img src="images/gallery-6.jpg" alt="Gallery photo 6" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="gallery-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 5V3h6v2"/></svg><span>Photo 6</span></div>
       </div>
     </div>

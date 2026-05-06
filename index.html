@@ -29,8 +29,9 @@
   .nav-links a:hover { opacity: 1; }
 
   /* HERO */
-  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; padding: 0; }
-  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 8rem 4rem 4rem 6rem; }
+  .hero-outer { position: relative; min-height: 100vh; background: linear-gradient(90deg, var(--paper) 50%, #5c2d42 50%); }
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; padding: 0; max-width: 1400px; margin: 0 auto; position: relative; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 8rem 4rem 4rem; }
   .hero-tag { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem; }
   .hero-tag::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--rose); }
   h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 5vw, 5.5rem); font-weight: 300; line-height: 1.05; color: var(--deep); margin-bottom: 2rem; }
@@ -155,6 +156,7 @@
   @media (max-width: 900px) {
     nav { padding: 1.2rem 2rem; }
     .nav-links { display: none; }
+    .hero-outer { background: var(--paper); }
     .hero { grid-template-columns: 1fr; }
     .hero-right { display: none; }
     .hero-left { padding: 7rem 2rem 4rem; }
@@ -182,6 +184,7 @@
 </nav>
 
 <!-- HERO -->
+<div class="hero-outer">
 <section class="hero">
   <div class="hero-left">
     <div class="hero-tag">Calgary, AB</div>
@@ -200,6 +203,7 @@
     <div class="hero-deco">NR</div>
   </div>
 </section>
+</div>
 
 <!-- ABOUT -->
 <section id="about">
@@ -216,16 +220,11 @@
         <div class="section-label" style="margin-bottom:1rem">Areas of Expertise</div>
         <div class="expertise-list">
           <div class="expertise-item">High-Touch Executive Events</div>
-          <div class="expertise-item">Customer Conference Strategy</div>
+          <div class="expertise-item">Customer Conference Strategy &amp; Execution</div>
           <div class="expertise-item">Pipeline &amp; Revenue Influence</div>
-          <div class="expertise-item">Team Leadership &amp; Development</div>
-          <div class="expertise-item">Cross-Functional Collaboration</div>
-          <div class="expertise-item">GTM Strategy Alignment</div>
           <div class="expertise-item">Budget &amp; Vendor Management</div>
           <div class="expertise-item">B2B SaaS &amp; Enterprise Events</div>
           <div class="expertise-item">Community &amp; Fundraising Events</div>
-          <div class="expertise-item">Higher Education Programming</div>
-          <div class="expertise-item">Process &amp; Framework Development</div>
         </div>
       </div>
     </div>
@@ -272,8 +271,8 @@
         <ul>
           <li>Full lifecycle ownership from concept through onsite execution and post-event reporting</li>
           <li>Cross-functional alignment across sales, CS, leadership, and sponsors</li>
-          <li>Drove 30% YoY attendance growth while reducing budget at Bankjoy</li>
-          <li>Directly contributed to $1M+ influenced pipeline and 5-point NPS increase</li>
+          <li>Year over year attendance growth fuelled by strategic budget decisions</li>
+          <li>Seamless experience design that improves NPS scores and creates raving fans.</li>
         </ul>
       </div>
 
@@ -343,31 +342,6 @@
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
   <button class="lightbox-close" onclick="closeLightbox(event)">×</button>
   <img class="lightbox-img" id="lightbox-img" src="" alt="Gallery photo">
-</div>
-
-<!-- EDUCATION -->
-<div class="edu-strip">
-  <div class="container">
-    <div class="section-label label-on-dark" style="margin-bottom:2rem;">Education &amp; Training</div>
-    <div class="edu-items">
-      <div class="edu-item">
-        <div class="edu-degree">Graduate Certificate, Marketing Management</div>
-        <div class="edu-school">Fanshawe College</div>
-      </div>
-      <div class="edu-item">
-        <div class="edu-degree">B.Sc. General Science</div>
-        <div class="edu-school">University of Waterloo</div>
-      </div>
-      <div class="edu-item">
-        <div class="edu-degree">Growth Marketing Certificate</div>
-        <div class="edu-school">Growclass</div>
-      </div>
-      <div class="edu-item">
-        <div class="edu-degree">The Practice of Coaching</div>
-        <div class="edu-school">Roy Group Leadership Inc.</div>
-      </div>
-    </div>
-  </div>
 </div>
 
 <!-- CONTACT -->

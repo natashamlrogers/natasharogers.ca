@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Natasha Rogers | Event Specialist & Strategic Leader</title>
+<title>Natasha Rogers | Event Specialist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -39,13 +39,9 @@
   .hero-cta { display: inline-flex; align-items: center; gap: 1rem; background: var(--deep); color: var(--paper); padding: 1rem 2rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.3s; width: fit-content; }
   .hero-cta:hover { background: var(--rose); }
   .hero-right { position: relative; overflow: hidden; background: linear-gradient(135deg, #3b1f2b 0%, #5c2d42 50%, #7a3558 100%); display: flex; align-items: center; justify-content: center; }
-  .hero-right-inner { display: flex; flex-direction: column; align-items: center; gap: clamp(1.5rem, 3vw, 2.5rem); width: 100%; z-index: 1; padding: clamp(5rem, 8vw, 8rem) clamp(2rem, 4vw, 4rem) clamp(2rem, 4vw, 4rem); box-sizing: border-box; }
-  .hero-photo { width: clamp(110px, 14vw, 180px); height: clamp(110px, 14vw, 180px); border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid rgba(232,160,184,0.45); display: block; box-shadow: 0 0 0 6px rgba(232,160,184,0.08); }
-  .hero-photo-fallback { width: clamp(110px, 14vw, 180px); height: clamp(110px, 14vw, 180px); border-radius: 50%; background: rgba(232,160,184,0.08); border: 2px dashed rgba(232,160,184,0.35); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.3rem; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(232,160,184,0.5); text-align: center; }
-  .hero-stat-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2rem); z-index: 1; width: 100%; box-sizing: border-box; }
-  .hero-stat { border-top: 1px solid rgba(232,160,184,0.25); padding-top: 1.2rem; }
-  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 4vw, 4.5rem); font-weight: 300; color: var(--pink); line-height: 1; display: block; }
-  .stat-label { font-size: 0.72rem; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(253,245,247,0.6); margin-top: 0.4rem; display: block; }
+  .hero-photo-wrap { display: flex; align-items: center; justify-content: center; width: 100%; z-index: 1; padding: 8rem 4rem 4rem; }
+  .hero-photo { width: clamp(160px, 20vw, 260px); height: clamp(160px, 20vw, 260px); border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid rgba(232,160,184,0.45); display: block; box-shadow: 0 0 0 10px rgba(232,160,184,0.06), 0 0 0 20px rgba(232,160,184,0.03); }
+  .hero-photo-fallback { width: clamp(160px, 20vw, 260px); height: clamp(160px, 20vw, 260px); border-radius: 50%; background: rgba(232,160,184,0.08); border: 2px dashed rgba(232,160,184,0.35); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.3rem; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(232,160,184,0.5); text-align: center; }
   .hero-deco { position: absolute; font-family: 'Cormorant Garamond', serif; font-size: 18rem; font-weight: 300; color: rgba(232,160,184,0.06); bottom: -3rem; right: -2rem; line-height: 1; user-select: none; z-index: 0; }
 
   /* SHARED */
@@ -68,36 +64,32 @@
   /* EXPERIENCE */
   #experience { background: var(--deep); }
   #experience h2 { color: var(--paper); }
-  .timeline { position: relative; }
-  .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: rgba(232,160,184,0.2); }
-  .timeline-item { padding-left: 3rem; margin-bottom: 4rem; position: relative; }
-  .timeline-dot { position: absolute; left: -5px; top: 0.4rem; width: 11px; height: 11px; border-radius: 50%; background: var(--pink); border: 2px solid var(--deep); }
-  .timeline-date { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); margin-bottom: 0.4rem; }
-  .timeline-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--paper); margin-bottom: 0.2rem; line-height: 1.3; }
-  .timeline-company { font-size: 0.8rem; color: rgba(253,245,247,0.55); margin-bottom: 1rem; letter-spacing: 0.05em; }
-  .timeline-bullets { list-style: none; }
-  .timeline-bullets li { font-size: 0.88rem; line-height: 1.7; color: rgba(253,245,247,0.8); padding: 0.4rem 0 0.4rem 1.4rem; position: relative; border-bottom: 1px solid rgba(232,160,184,0.1); }
-  .timeline-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--pink); font-size: 0.7rem; top: 0.55rem; }
 
-  /* IMPACT */
-  #impact { background: var(--paper); padding: 6rem 0 0; }
-  .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 2rem; }
-  .impact-card { background: var(--mist); padding: 3rem 2.5rem; transition: background 0.3s; }
-  .impact-card:hover { background: var(--rose); }
-  .impact-card:hover .impact-stat { color: var(--paper); }
-  .impact-card:hover .impact-desc { color: var(--paper); opacity: 1; }
-  .impact-icon { font-size: 1.8rem; margin-bottom: 1.5rem; }
-  .impact-stat { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: var(--deep); line-height: 1; display: block; margin-bottom: 0.5rem; transition: color 0.3s; }
-  .impact-desc { font-size: 0.82rem; color: var(--ink); opacity: 0.7; line-height: 1.6; transition: color 0.3s, opacity 0.3s; }
+  /* FEATURED EVENTS */
+  .featured-events { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem; }
+  .featured-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(232,160,184,0.18); padding: 2.5rem 2rem; position: relative; transition: background 0.3s; }
+  .featured-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--rose), var(--pink)); }
+  .featured-card:hover { background: rgba(232,160,184,0.07); }
+  .featured-card-icon { font-size: 2rem; display: block; margin-bottom: 1.2rem; }
+  .featured-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--paper); margin-bottom: 0.8rem; line-height: 1.2; }
+  .featured-card p { font-size: 0.84rem; line-height: 1.85; color: rgba(253,245,247,0.72); margin-bottom: 1rem; }
+  .featured-card ul { list-style: none; }
+  .featured-card ul li { font-size: 0.81rem; line-height: 1.65; color: rgba(253,245,247,0.62); padding: 0.3rem 0 0.3rem 1.3rem; position: relative; border-bottom: 1px solid rgba(232,160,184,0.08); }
+  .featured-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--pink); font-size: 0.65rem; top: 0.48rem; }
 
-  /* SKILLS */
-  #skills { background: var(--paper); }
-  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-  .skill-category h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--deep); margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--mist); }
-  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-  .skill-tag { padding: 0.4rem 1rem; font-size: 0.75rem; letter-spacing: 0.08em; border: 1px solid rgba(59,31,43,0.2); color: var(--deep); transition: all 0.2s; cursor: default; }
-  .skill-tag:hover { background: var(--deep); color: var(--paper); border-color: var(--deep); }
-  .skill-tag.proficient { background: var(--mist); border-color: var(--mist); }
+  /* OTHER EVENTS BAR */
+  .other-events-bar { border: 1px solid rgba(232,160,184,0.15); padding: 1.6rem 2rem; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; justify-content: space-between; }
+  .other-events-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); white-space: nowrap; }
+  .other-events-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; flex: 1; }
+  .other-event-tag { font-size: 0.72rem; letter-spacing: 0.05em; color: rgba(253,245,247,0.5); border: 1px solid rgba(232,160,184,0.15); padding: 0.3rem 0.8rem; white-space: nowrap; }
+  .other-events-link { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pink); text-decoration: none; white-space: nowrap; border-bottom: 1px solid rgba(232,160,184,0.4); padding-bottom: 0.1rem; transition: opacity 0.2s; }
+  .other-events-link:hover { opacity: 0.7; }
+
+  /* CAREER LINK ROW */
+  .career-link-row { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(232,160,184,0.15); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .career-link-text { font-size: 0.88rem; color: rgba(253,245,247,0.6); }
+  .career-link-btn { display: inline-flex; align-items: center; gap: 0.8rem; background: transparent; border: 1px solid rgba(232,160,184,0.4); color: var(--pink); padding: 0.8rem 1.6rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, border-color 0.2s, color 0.2s; }
+  .career-link-btn:hover { background: var(--pink); border-color: var(--pink); color: var(--deep); }
 
   /* GALLERY */
   #gallery { background: var(--paper); padding: 5rem 0; }
@@ -111,48 +103,6 @@
   .gallery-placeholder { position: absolute; inset: 0; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; color: var(--deep); opacity: 0.35; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; }
   .gallery-placeholder svg { width: 2rem; height: 2rem; stroke: currentColor; fill: none; stroke-width: 1.5; }
 
-  /* EVENTS ACCORDION */
-  .events-list { display: flex; flex-direction: column; }
-  .event-item { border-top: 1px solid rgba(232,160,184,0.15); }
-  .event-item:last-child { border-bottom: 1px solid rgba(232,160,184,0.15); }
-  .event-header { display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 0; cursor: pointer; gap: 1rem; user-select: none; }
-  .event-header:hover .event-name { color: var(--pink); }
-  .event-name { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; color: var(--paper); line-height: 1.2; transition: color 0.2s; }
-  .event-toggle { width: 26px; height: 26px; border: 1px solid rgba(232,160,184,0.35); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s, border-color 0.2s; }
-  .event-toggle svg { stroke: var(--pink); transition: transform 0.3s ease; }
-  .event-item.open .event-toggle { background: var(--pink); border-color: var(--pink); }
-  .event-item.open .event-toggle svg { stroke: var(--deep); transform: rotate(45deg); }
-  .event-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-  .event-body-inner { padding: 0 0 1.6rem 0; }
-  .event-body-inner p { font-size: 0.88rem; line-height: 1.85; color: rgba(253,245,247,0.78); margin-bottom: 0.8rem; }
-  .event-body-inner ul { list-style: none; }
-  .event-body-inner ul li { font-size: 0.85rem; line-height: 1.7; color: rgba(253,245,247,0.72); padding: 0.3rem 0 0.3rem 1.4rem; position: relative; border-bottom: 1px solid rgba(232,160,184,0.07); }
-  .event-body-inner ul li::before { content: '→'; position: absolute; left: 0; color: var(--pink); font-size: 0.7rem; top: 0.5rem; }
-  .career-link-row { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(232,160,184,0.15); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-  .career-link-text { font-size: 0.88rem; color: rgba(253,245,247,0.6); }
-  .career-link-btn { display: inline-flex; align-items: center; gap: 0.8rem; background: transparent; border: 1px solid rgba(232,160,184,0.4); color: var(--pink); padding: 0.8rem 1.6rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, border-color 0.2s, color 0.2s; }
-  .career-link-btn:hover { background: var(--pink); border-color: var(--pink); color: var(--deep); }
-
-  /* IMPACT ACCORDION */
-  .impact-accordion-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 0.5rem; }
-  .impact-accordion-card { background: rgba(255,255,255,0.04); padding: 2rem 1.8rem; border: 1px solid rgba(232,160,184,0.1); transition: background 0.3s; }
-  .impact-accordion-card:hover { background: rgba(232,160,184,0.1); }
-  .impact-accordion-icon { font-size: 1.4rem; display: block; margin-bottom: 1rem; }
-  .impact-accordion-stat { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--pink); line-height: 1; display: block; margin-bottom: 0.5rem; }
-  .impact-accordion-desc { font-size: 0.8rem; color: rgba(253,245,247,0.65); line-height: 1.6; }
-
-  /* SKILLS ACCORDION */
-  .skills-accordion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 0.5rem; }
-  .skill-category-dark h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--paper); margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(232,160,184,0.2); }
-  .skill-tag-dark { padding: 0.4rem 1rem; font-size: 0.75rem; letter-spacing: 0.08em; border: 1px solid rgba(232,160,184,0.25); color: rgba(253,245,247,0.8); transition: all 0.2s; cursor: default; display: inline-block; margin: 0.25rem 0.2rem 0 0; }
-  .skill-tag-dark:hover { background: var(--pink); border-color: var(--pink); color: var(--deep); }
-  .skill-tag-dark.proficient { background: rgba(232,160,184,0.12); border-color: rgba(232,160,184,0.3); }
-
-  @media (max-width: 900px) {
-    .impact-accordion-grid { grid-template-columns: 1fr 1fr; }
-    .skills-accordion-grid { grid-template-columns: 1fr; }
-  }
-
   /* LIGHTBOX */
   .lightbox { display: none; position: fixed; inset: 0; background: rgba(26,17,24,0.96); z-index: 999; align-items: center; justify-content: center; padding: 2rem; }
   .lightbox.open { display: flex; }
@@ -160,12 +110,20 @@
   .lightbox-close { position: absolute; top: 1.5rem; right: 2rem; background: none; border: none; color: rgba(253,245,247,0.7); font-size: 2.2rem; cursor: pointer; line-height: 1; transition: color 0.2s; padding: 0.5rem; }
   .lightbox-close:hover { color: var(--pink); }
 
-  /* COMMUNITY */
+  /* COMMUNITY — collapsible */
   #community { background: var(--mist); }
-  .community-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .community-accordion-header { display: flex; justify-content: space-between; align-items: flex-start; cursor: pointer; gap: 1rem; padding-bottom: 1rem; user-select: none; }
+  .community-accordion-header:hover .community-toggle-icon { border-color: var(--rose); }
+  .community-toggle-icon { width: 28px; height: 28px; border: 1px solid rgba(184,56,102,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.3rem; transition: background 0.2s, border-color 0.2s; }
+  .community-toggle-icon svg { stroke: var(--rose); transition: transform 0.3s ease; }
+  #community.open .community-toggle-icon { background: var(--rose); }
+  #community.open .community-toggle-icon svg { stroke: var(--paper); transform: rotate(45deg); }
+  .community-body { max-height: 0; overflow: hidden; transition: max-height 0.45s ease; }
+  .community-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; padding-top: 1.5rem; }
   .community-card { background: var(--paper); padding: 2rem; border-left: 3px solid var(--rose); }
   .community-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--deep); margin-bottom: 0.3rem; }
   .community-card p { font-size: 0.8rem; color: var(--ink); opacity: 0.65; }
+  .community-hint { font-size: 0.75rem; color: var(--ink); opacity: 0.5; margin-top: 0.5rem; letter-spacing: 0.05em; }
 
   /* EDUCATION */
   .edu-strip { background: var(--deep); padding: 4rem 0; }
@@ -201,7 +159,8 @@
     .hero-right { display: none; }
     .hero-left { padding: 7rem 2rem 4rem; }
     .container { padding: 0 2rem; }
-    .about-grid, .skills-grid, .contact-layout, .impact-grid, .community-grid { grid-template-columns: 1fr; }
+    .about-grid, .contact-layout, .community-grid { grid-template-columns: 1fr; }
+    .featured-events { grid-template-columns: 1fr; }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .edu-items { flex-direction: column; gap: 2rem; }
     .edu-item { border-right: none; border-bottom: 1px solid rgba(232,160,184,0.15); padding: 0 0 2rem; }
@@ -212,12 +171,12 @@
 <body>
 
 <nav>
-  <a class="nav-logo" href="#">Natasha Rogers</a>
+  <a class="nav-logo" href="index.html">Natasha Rogers</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="career.html">Career Journey</a></li>
+    <li><a href="#experience">Events</a></li>
     <li><a href="#gallery">Gallery</a></li>
+    <li><a href="career.html">Career &amp; Impact</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -225,39 +184,17 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-tag">Calgary, AB · Open to Opportunities</div>
-    <h1>Events That<br><em>Move</em><br>Business</h1>
-    <p class="hero-desc">Strategic webinar and events leader with 10+ years of experience scaling B2B digital programs in SaaS and global enterprise technology.</p>
+    <div class="hero-tag">Calgary, AB</div>
+    <h1>Events that<br><em>Drive</em><br>Business</h1>
+    <p class="hero-desc">Strategic events professional with over 15 years of experience scaling B2B programs in various industries.</p>
     <a class="hero-cta" href="#contact">Let's Connect <span>→</span></a>
   </div>
   <div class="hero-right">
-    <div class="hero-right-inner">
+    <div class="hero-photo-wrap">
       <img src="images/profile.jpg" alt="Natasha Rogers" class="hero-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="hero-photo-fallback" style="display:none">
         <svg viewBox="0 0 24 24" width="2rem" height="2rem" stroke="rgba(232,160,184,0.5)" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
         <span>Your photo</span>
-      </div>
-      <div class="hero-stat-grid">
-        <div style="display:flex;flex-direction:column;gap:clamp(1rem,2.5vw,2rem)">
-          <div class="hero-stat">
-            <span class="stat-num">433<span style="font-size:1.6rem">%</span></span>
-            <span class="stat-label">Webinar Program Growth</span>
-          </div>
-          <div class="hero-stat">
-            <span class="stat-num">400<span style="font-size:1.6rem">+</span></span>
-            <span class="stat-label">Virtual Events Annually</span>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:clamp(1rem,2.5vw,2rem)">
-          <div class="hero-stat">
-            <span class="stat-num">$1M<span style="font-size:1.6rem">+</span></span>
-            <span class="stat-label">Influenced Pipeline</span>
-          </div>
-          <div class="hero-stat">
-            <span class="stat-num">10<span style="font-size:1.6rem">+</span></span>
-            <span class="stat-label">Years of Leadership</span>
-          </div>
-        </div>
       </div>
     </div>
     <div class="hero-deco">NR</div>
@@ -270,304 +207,95 @@
     <div class="section-label">About</div>
     <div class="about-grid">
       <div class="about-text">
-        <h2>Strategic Leader.<br>Hands-On Builder.</h2>
-        <p>I combine execution expertise with strategic vision, personally delivering high-impact programs while building the scalable frameworks and high-performing teams that sustain them long-term.</p>
-        <p>My career has been defined by transforming ideas into measurable outcomes: scaling a webinar program from one to 400+ events annually, turning it into a company's #1 revenue source. I believe in meeting people where they're at, whether clients, colleagues, or stakeholders, to build the productive partnerships that drive real results.</p>
-        <p>Based in Calgary, AB, I bring deep expertise in B2B SaaS marketing, enterprise client relations, and GTM strategy alignment, with a track record of exceptional margins and lasting business impact.</p>
+        <h2>Your Strategic<br><em style="font-style:italic;color:var(--rose)">Partner</em></h2>
+        <p>I combine execution expertise with strategic vision, delivering high-impact programs that sustain long-term.</p>
+        <p>Transforming ideas into measurable outcomes is where I excel, building the productive partnerships that drive real results.</p>
+        <p>Based in Calgary, AB, I have also run programs across the US and Canada.</p>
       </div>
       <div>
         <div class="section-label" style="margin-bottom:1rem">Areas of Expertise</div>
         <div class="expertise-list">
-          <div class="expertise-item">Webinar Strategy &amp; Execution</div>
-          <div class="expertise-item">Virtual Events Programming</div>
+          <div class="expertise-item">High-Touch Executive Events</div>
+          <div class="expertise-item">Customer Conference Strategy</div>
           <div class="expertise-item">Pipeline &amp; Revenue Influence</div>
           <div class="expertise-item">Team Leadership &amp; Development</div>
           <div class="expertise-item">Cross-Functional Collaboration</div>
           <div class="expertise-item">GTM Strategy Alignment</div>
           <div class="expertise-item">Budget &amp; Vendor Management</div>
-          <div class="expertise-item">Performance Analytics &amp; Optimization</div>
-          <div class="expertise-item">B2B SaaS Marketing</div>
-          <div class="expertise-item">Enterprise Client Relations</div>
+          <div class="expertise-item">B2B SaaS &amp; Enterprise Events</div>
+          <div class="expertise-item">Community &amp; Fundraising Events</div>
+          <div class="expertise-item">Higher Education Programming</div>
           <div class="expertise-item">Process &amp; Framework Development</div>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- EXPERIENCE -->
+<!-- EXPERIENCE / FEATURED EVENTS -->
 <section id="experience">
   <div class="container">
-    <div class="section-label label-on-dark">Experience</div>
-    <h2 style="color:var(--paper);margin-bottom:0.5rem">Events I've Delivered</h2>
-    <p style="font-size:0.9rem;color:rgba(253,245,247,0.6);margin-bottom:2.5rem;line-height:1.7">Click any event type to learn more about how I approach it.</p>
-    <div class="events-list">
+    <div class="section-label label-on-dark">Signature Events</div>
+    <h2 style="color:var(--paper);margin-bottom:0.5rem">Events I'm Known For</h2>
+    <p style="font-size:0.9rem;color:rgba(253,245,247,0.6);margin-bottom:2.5rem;line-height:1.7">High-touch, high-impact events that move relationships and business forward.</p>
 
-      <div class="event-item">
-        <div class="event-header" onclick="toggleEvent(this)">
-          <span class="event-name">Customer Conference</span>
-          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </div>
-        <div class="event-body">
-          <div class="event-body-inner">
-            <p>Flagship annual customer events that deepen relationships, drive retention, and create memorable brand experiences. At Bankjoy, drove 30% YoY attendance growth while simultaneously reducing budget and securing higher sponsorship revenue.</p>
-            <ul>
-              <li>Full lifecycle ownership from concept and venue selection through onsite execution and post-event reporting</li>
-              <li>Cross-functional alignment across sales, customer success, leadership, and sponsors</li>
-              <li>Contributed directly to $1M+ influenced pipeline, 2 accelerated renewals, and 3 new account closures</li>
-              <li>Event experience tied to a 5-point increase in customer NPS scores</li>
-            </ul>
-          </div>
-        </div>
+    <div class="featured-events">
+
+      <div class="featured-card">
+        <span class="featured-card-icon">🏛</span>
+        <h3>Customer Advisory Board</h3>
+        <p>Strategic advisory sessions that give your most important clients a voice — and deepen the executive relationships that drive long-term retention and growth.</p>
+        <ul>
+          <li>Program design, facilitation planning, and end-to-end logistics</li>
+          <li>Agenda built around client insights, product alignment, and relationship depth</li>
+          <li>Creates high-trust touchpoints with key accounts at the executive level</li>
+          <li>Post-event follow-through structures to turn conversations into commitments</li>
+        </ul>
       </div>
 
-      <div class="event-item">
-        <div class="event-header" onclick="toggleEvent(this)">
-          <span class="event-name">Trade Show Booth Presence</span>
-          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </div>
-        <div class="event-body">
-          <div class="event-body-inner">
-            <p>End-to-end coordination of onsite tradeshow booth presence for enterprise technology events, integrated with broader demand generation strategy to maximize lead capture and sponsor ROI.</p>
-            <ul>
-              <li>Vendor management, booth logistics, staffing, and onsite coordination</li>
-              <li>Integrated with digital demand generation campaigns for full-funnel impact</li>
-              <li>Enterprise client partnerships including Rubrik, Cisco, Red Hat, and NetApp</li>
-              <li>Coordinated hybrid elements to extend reach beyond the physical event footprint</li>
-            </ul>
-          </div>
-        </div>
+      <div class="featured-card">
+        <span class="featured-card-icon">🍽</span>
+        <h3>VIP &amp; Executive Dinners</h3>
+        <p>Intimate, curated dining experiences designed to accelerate deals, reward loyalty, and create the kind of brand moments that no email can replicate.</p>
+        <ul>
+          <li>Curated guest list strategy to maximize relationship and pipeline potential</li>
+          <li>Full logistics: venue, catering, gifting, seating strategy, and day-of coordination</li>
+          <li>White-glove experience designed to reflect your brand at its best</li>
+          <li>Follow-through cadence that converts dinner connections into business outcomes</li>
+        </ul>
       </div>
 
-      <div class="event-item">
-        <div class="event-header" onclick="toggleEvent(this)">
-          <span class="event-name">Customer Advisory Board</span>
-          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </div>
-        <div class="event-body">
-          <div class="event-body-inner">
-            <p>Strategic advisory sessions that give enterprise clients a voice in product and strategy while strengthening executive-level relationships and reinforcing long-term partnership value.</p>
-            <ul>
-              <li>Program design, facilitation planning, and logistics coordination</li>
-              <li>Alignment with customer success, product, and sales leadership to shape agenda</li>
-              <li>Supports retention strategy and creates high-trust touchpoints with key accounts</li>
-              <li>Structures post-event follow-through to ensure commitments are actioned</li>
-            </ul>
-          </div>
-        </div>
+      <div class="featured-card">
+        <span class="featured-card-icon">🎤</span>
+        <h3>Customer Conference</h3>
+        <p>Flagship annual gatherings that deepen customer relationships, accelerate renewals, and generate measurable pipeline — all while celebrating the people who matter most.</p>
+        <ul>
+          <li>Full lifecycle ownership from concept through onsite execution and post-event reporting</li>
+          <li>Cross-functional alignment across sales, CS, leadership, and sponsors</li>
+          <li>Drove 30% YoY attendance growth while reducing budget at Bankjoy</li>
+          <li>Directly contributed to $1M+ influenced pipeline and 5-point NPS increase</li>
+        </ul>
       </div>
 
-      <div class="event-item">
-        <div class="event-header" onclick="toggleEvent(this)">
-          <span class="event-name">Company Offsite</span>
-          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </div>
-        <div class="event-body">
-          <div class="event-body-inner">
-            <p>Internal leadership and team gatherings designed to foster strategic alignment, build culture, and energize distributed teams — particularly impactful in remote-first organizations.</p>
-            <ul>
-              <li>Venue sourcing, travel logistics, and full program coordination</li>
-              <li>Agenda design balancing structured sessions with connection-building activities</li>
-              <li>Experience producing meaningful team moments across multiple distributed organizations</li>
-              <li>Post-event alignment documentation to translate energy into action</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    </div>
 
-      <div class="event-item">
-        <div class="event-header" onclick="toggleEvent(this)">
-          <span class="event-name">Community Fundraising</span>
-          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </div>
-        <div class="event-body">
-          <div class="event-body-inner">
-            <p>Mission-driven fundraising events that raise funds and awareness for charitable organizations through creative programming and community-centered experiences.</p>
-            <ul>
-              <li>Increased special event fundraising totals by 100% through strategic execution and creative programming</li>
-              <li>Volunteer event leadership with Making Changes / Dress for Success Calgary and Calgary Folk Music Festival</li>
-              <li>Experience managing large-scale safety, logistics, and volunteer teams at major community events</li>
-              <li>Inclusive campaign and event design that engages new audiences and expands community reach</li>
-            </ul>
-          </div>
-        </div>
+    <div class="other-events-bar">
+      <span class="other-events-label">Also delivered</span>
+      <div class="other-events-tags">
+        <span class="other-event-tag">Trade Show</span>
+        <span class="other-event-tag">Company Offsite</span>
+        <span class="other-event-tag">Community Fundraising</span>
+        <span class="other-event-tag">Hybrid Webinar</span>
+        <span class="other-event-tag">Demand Gen Webinars</span>
+        <span class="other-event-tag">Student Staff Training</span>
+        <span class="other-event-tag">Orientation Week</span>
       </div>
-
-      <div class="event-item">
-        <div class="event-header" onclick="toggleEvent(this)">
-          <span class="event-name">Student Staff Training</span>
-          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </div>
-        <div class="event-body">
-          <div class="event-body-inner">
-            <p>Comprehensive multi-day training programs that equip student staff with the skills, knowledge, and confidence to support their peers and uphold community standards.</p>
-            <ul>
-              <li>Designed and led a 2-week training program for 20 student staff at Mount Royal University</li>
-              <li>Co-developed code of conduct, policy orientation, and student staff handbook</li>
-              <li>Curriculum covering leadership development, crisis response, and community building</li>
-              <li>Created engaging, high-retention programming that prepared staff for real-world challenges</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="event-item">
-        <div class="event-header" onclick="toggleEvent(this)">
-          <span class="event-name">Orientation Week</span>
-          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </div>
-        <div class="event-body">
-          <div class="event-body-inner">
-            <p>Large-scale welcome programming for incoming students that sets the tone for community belonging, academic success, and a positive institutional experience from day one.</p>
-            <ul>
-              <li>Coordinated multi-stakeholder programming across campus departments and student organizations</li>
-              <li>Inclusive event design that intentionally welcomed students from diverse backgrounds</li>
-              <li>Experience at both domestic (Mount Royal University) and international (Bader College, Queen's University, UK) institutions</li>
-              <li>Led activity trips and field studies across three countries with groups of 160+ students</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="event-item">
-        <div class="event-header" onclick="toggleEvent(this)">
-          <span class="event-name">Hybrid Webinar Event</span>
-          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </div>
-        <div class="event-body">
-          <div class="event-body-inner">
-            <p>Seamlessly integrated in-person event presence with live digital webinar delivery to expand audience reach, maximize content value, and increase sponsor ROI beyond physical attendance caps.</p>
-            <ul>
-              <li>Spearheaded hybrid event formats at ActualTech Media combining tradeshow booths with live-streamed sessions</li>
-              <li>Technical coordination across in-room AV, streaming platforms, and remote moderation</li>
-              <li>Simultaneous management of in-person and virtual attendee experiences</li>
-              <li>Achieved measurable uplift in total audience reach and sponsor deliverables by blending both formats</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="event-item">
-        <div class="event-header" onclick="toggleEvent(this)">
-          <span class="event-name">Demand Generation Webinar Programs</span>
-          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </div>
-        <div class="event-body">
-          <div class="event-body-inner">
-            <p>B2B demand generation webinar programs built to drive pipeline, nurture prospects, and support revenue targets — scaled to operate at enterprise volume without sacrificing quality or ROI.</p>
-            <ul>
-              <li>Scaled from 1 to 400+ annual webinar events (433% growth) — became the company's #1 revenue driver</li>
-              <li>Generated $1M+ in influenced pipeline through strategic program alignment at Bankjoy</li>
-              <li>Partnered with sales, product marketing, and demand gen to align programs to GTM motions</li>
-              <li>Built operational frameworks, promotion strategies, and performance reporting to sustain scale</li>
-              <li>Platform expertise: Zoom, ON24, Notified, and custom analytics integrations</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
+      <a class="other-events-link" href="portfolio.html#experience">View all event types →</a>
     </div>
 
     <div class="career-link-row">
-      <span class="career-link-text">Want to see the full work history?</span>
-      <a class="career-link-btn" href="career.html">View Career Journey →</a>
-    </div>
-
-    <div class="events-list" style="margin-top:2.5rem">
-
-      <div class="event-item">
-        <div class="event-header" onclick="toggleEvent(this)">
-          <span class="event-name">Impact by the Numbers</span>
-          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </div>
-        <div class="event-body">
-          <div class="event-body-inner">
-            <div class="impact-accordion-grid">
-              <div class="impact-accordion-card">
-                <span class="impact-accordion-icon">📈</span>
-                <span class="impact-accordion-stat">433%</span>
-                <div class="impact-accordion-desc">Webinar program growth, from 1 to 400+ events annually, becoming the company's #1 revenue driver</div>
-              </div>
-              <div class="impact-accordion-card">
-                <span class="impact-accordion-icon">💼</span>
-                <span class="impact-accordion-stat">$1M+</span>
-                <div class="impact-accordion-desc">Pipeline influenced at Bankjoy through strategic event programs aligned to sales and retention goals</div>
-              </div>
-              <div class="impact-accordion-card">
-                <span class="impact-accordion-icon">🎯</span>
-                <span class="impact-accordion-stat">30%</span>
-                <div class="impact-accordion-desc">Increase in customer conference attendance YoY while reducing budget and improving sponsorship revenue</div>
-              </div>
-              <div class="impact-accordion-card">
-                <span class="impact-accordion-icon">👥</span>
-                <span class="impact-accordion-stat">300%</span>
-                <div class="impact-accordion-desc">Company staff growth during tenure at ActualTech, leading a team of 7 as Senior Director</div>
-              </div>
-              <div class="impact-accordion-card">
-                <span class="impact-accordion-icon">⭐</span>
-                <span class="impact-accordion-stat">+5pt</span>
-                <div class="impact-accordion-desc">Customer NPS score increase through event experiences tied directly to satisfaction and retention</div>
-              </div>
-              <div class="impact-accordion-card">
-                <span class="impact-accordion-icon">🤝</span>
-                <span class="impact-accordion-stat">100%</span>
-                <div class="impact-accordion-desc">Increase in special event fundraising through creative community programming and strategic execution</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="event-item">
-        <div class="event-header" onclick="toggleEvent(this)">
-          <span class="event-name">Skills &amp; Tools</span>
-          <span class="event-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-        </div>
-        <div class="event-body">
-          <div class="event-body-inner">
-            <div class="skills-accordion-grid">
-              <div class="skill-category-dark">
-                <h3>Proficient In</h3>
-                <span class="skill-tag-dark proficient">Zoom</span>
-                <span class="skill-tag-dark proficient">Notified</span>
-                <span class="skill-tag-dark proficient">Asana</span>
-                <span class="skill-tag-dark proficient">Slack</span>
-                <span class="skill-tag-dark proficient">MS Office Suite</span>
-                <span class="skill-tag-dark proficient">Google Workspace</span>
-              </div>
-              <div class="skill-category-dark">
-                <h3>Working Knowledge</h3>
-                <span class="skill-tag-dark">HubSpot</span>
-                <span class="skill-tag-dark">Salesforce</span>
-                <span class="skill-tag-dark">ON24</span>
-                <span class="skill-tag-dark">Custom Analytics</span>
-                <span class="skill-tag-dark">Data Visualization</span>
-                <span class="skill-tag-dark">Constant Contact</span>
-              </div>
-              <div class="skill-category-dark">
-                <h3>Marketing Disciplines</h3>
-                <span class="skill-tag-dark">B2B Demand Gen</span>
-                <span class="skill-tag-dark">Email Marketing</span>
-                <span class="skill-tag-dark">Social Media</span>
-                <span class="skill-tag-dark">Event Marketing</span>
-                <span class="skill-tag-dark">GTM Strategy</span>
-                <span class="skill-tag-dark">Content Marketing</span>
-              </div>
-              <div class="skill-category-dark">
-                <h3>Leadership &amp; Operations</h3>
-                <span class="skill-tag-dark">Team Building</span>
-                <span class="skill-tag-dark">Budget Management</span>
-                <span class="skill-tag-dark">Vendor Negotiation</span>
-                <span class="skill-tag-dark">Process Design</span>
-                <span class="skill-tag-dark">Crisis Management</span>
-                <span class="skill-tag-dark">Product Management</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <span class="career-link-text">Looking for the full work history, impact metrics, and skills?</span>
+      <a class="career-link-btn" href="career.html">View Career Journey &amp; Impact →</a>
     </div>
 
   </div>
@@ -617,31 +345,43 @@
   <img class="lightbox-img" id="lightbox-img" src="" alt="Gallery photo">
 </div>
 
-<!-- COMMUNITY -->
+<!-- COMMUNITY — collapsible -->
 <section id="community">
   <div class="container">
-    <div class="section-label">Community</div>
-    <h2>Giving Back</h2>
-    <div class="community-grid">
-      <div class="community-card">
-        <h4>Calgary Stampede</h4>
-        <p>Agriculture &amp; Western Events Media Committee · Community Connections Sub-Committee</p>
+    <div class="community-accordion-header" onclick="toggleCommunity()">
+      <div>
+        <div class="section-label" style="margin-bottom:0.5rem">Community</div>
+        <h2 style="margin-bottom:0">Giving Back</h2>
+        <p class="community-hint">Click to expand</p>
       </div>
-      <div class="community-card">
-        <h4>Calgary Folk Music Festival</h4>
-        <p>Safety &amp; Security Manager (former Dispatch and Rover Crew Coordinator)</p>
-      </div>
-      <div class="community-card">
-        <h4>Making Changes / Dress for Success Calgary</h4>
-        <p>Special Events and Image Consulting Volunteer</p>
-      </div>
-      <div class="community-card">
-        <h4>Chic Geek</h4>
-        <p>Career Pathing Mentor supporting women in technology and business</p>
-      </div>
-      <div class="community-card">
-        <h4>Tuxedo North Condominium Corporation</h4>
-        <p>Past Board President · Current Director</p>
+      <span class="community-toggle-icon">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round">
+          <line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/>
+        </svg>
+      </span>
+    </div>
+    <div class="community-body" id="communityBody">
+      <div class="community-grid">
+        <div class="community-card">
+          <h4>Calgary Stampede</h4>
+          <p>Agriculture &amp; Western Events Media Committee · Community Connections Sub-Committee</p>
+        </div>
+        <div class="community-card">
+          <h4>Calgary Folk Music Festival</h4>
+          <p>Safety &amp; Security Manager (former Dispatch and Rover Crew Coordinator)</p>
+        </div>
+        <div class="community-card">
+          <h4>Making Changes / Dress for Success Calgary</h4>
+          <p>Special Events and Image Consulting Volunteer</p>
+        </div>
+        <div class="community-card">
+          <h4>Chic Geek</h4>
+          <p>Career Pathing Mentor supporting women in technology and business</p>
+        </div>
+        <div class="community-card">
+          <h4>Tuxedo North Condominium Corporation</h4>
+          <p>Past Board President · Current Director</p>
+        </div>
       </div>
     </div>
   </div>
@@ -679,7 +419,7 @@
     <div class="contact-layout">
       <div>
         <h2>Let's Work<br>Together</h2>
-        <p class="contact-desc">I'm always open to conversations about events, marketing strategy, and new opportunities. Whether you're looking for a strategic partner or a hands-on execution leader, I'd love to connect.</p>
+        <p class="contact-desc">I'm always open to conversations about events, new opportunities, and the kinds of experiences that genuinely move business forward. Let's connect.</p>
       </div>
       <div class="contact-links">
         <a class="contact-link" href="mailto:natashaml.rogers@gmail.com">
@@ -703,7 +443,7 @@
 
 <footer>
   <div class="footer-name">Natasha Rogers</div>
-  <div class="footer-copy">Event Specialist · Strategic Leader · Calgary, AB</div>
+  <div class="footer-copy">Event Specialist · Calgary, AB</div>
 </footer>
 
 <script>
@@ -722,19 +462,19 @@
   }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-  function toggleEvent(header) {
-    const item = header.parentElement;
-    const body = header.nextElementSibling;
-    const isOpen = item.classList.contains('open');
-    // Close all open items
-    document.querySelectorAll('.event-item.open').forEach(el => {
-      el.classList.remove('open');
-      el.querySelector('.event-body').style.maxHeight = '0';
-    });
-    // Open clicked item if it was closed
-    if (!isOpen) {
-      item.classList.add('open');
+  function toggleCommunity() {
+    const section = document.getElementById('community');
+    const body = document.getElementById('communityBody');
+    const hint = section.querySelector('.community-hint');
+    const isOpen = section.classList.contains('open');
+    if (isOpen) {
+      section.classList.remove('open');
+      body.style.maxHeight = '0';
+      hint.textContent = 'Click to expand';
+    } else {
+      section.classList.add('open');
       body.style.maxHeight = body.scrollHeight + 'px';
+      hint.textContent = 'Click to collapse';
     }
   }
 </script>

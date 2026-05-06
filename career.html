@@ -55,6 +55,21 @@
   .timeline-bullets li { font-size: 0.88rem; line-height: 1.7; color: rgba(253,245,247,0.8); padding: 0.4rem 0 0.4rem 1.4rem; position: relative; border-bottom: 1px solid rgba(232,160,184,0.1); }
   .timeline-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--pink); font-size: 0.7rem; top: 0.55rem; }
 
+  /* IMPACT */
+  .impact-grid-career { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 1.5rem; }
+  .impact-card-career { background: rgba(255,255,255,0.04); border: 1px solid rgba(232,160,184,0.1); padding: 2rem 1.8rem; transition: background 0.3s; }
+  .impact-card-career:hover { background: rgba(232,160,184,0.1); }
+  .impact-icon-career { font-size: 1.4rem; display: block; margin-bottom: 1rem; }
+  .impact-stat-career { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--pink); line-height: 1; display: block; margin-bottom: 0.5rem; }
+  .impact-desc-career { font-size: 0.8rem; color: rgba(253,245,247,0.65); line-height: 1.6; }
+
+  /* SKILLS */
+  .skills-grid-career { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 1.5rem; }
+  .skill-cat-career h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--paper); margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(232,160,184,0.2); }
+  .skill-tag-career { padding: 0.4rem 1rem; font-size: 0.75rem; letter-spacing: 0.08em; border: 1px solid rgba(232,160,184,0.25); color: rgba(253,245,247,0.8); transition: all 0.2s; cursor: default; display: inline-block; margin: 0.25rem 0.2rem 0 0; }
+  .skill-tag-career:hover { background: var(--pink); border-color: var(--pink); color: var(--deep); }
+  .skill-tag-career.proficient { background: rgba(232,160,184,0.12); border-color: rgba(232,160,184,0.3); }
+
   /* BACK LINK */
   .back-bar { background: var(--mist); padding: 1.4rem 0; }
   .back-link { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--deep); text-decoration: none; opacity: 0.7; transition: opacity 0.2s; }
@@ -191,6 +206,93 @@
         </ul>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section style="background:var(--deep);padding:4rem 0 6rem;">
+  <div class="container">
+    <div class="section-label" style="color:var(--pink);margin-bottom:1.5rem">
+      <span>Impact by the Numbers</span>
+      <span style="flex:1;height:1px;background:var(--pink);opacity:0.3;display:block;margin-left:0.8rem"></span>
+    </div>
+    <div class="impact-grid-career">
+      <div class="impact-card-career">
+        <span class="impact-icon-career">📈</span>
+        <span class="impact-stat-career">433%</span>
+        <div class="impact-desc-career">Webinar program growth, from 1 to 400+ events annually, becoming the company's #1 revenue driver</div>
+      </div>
+      <div class="impact-card-career">
+        <span class="impact-icon-career">💼</span>
+        <span class="impact-stat-career">$1M+</span>
+        <div class="impact-desc-career">Pipeline influenced at Bankjoy through strategic event programs aligned to sales and retention goals</div>
+      </div>
+      <div class="impact-card-career">
+        <span class="impact-icon-career">🎯</span>
+        <span class="impact-stat-career">30%</span>
+        <div class="impact-desc-career">Increase in customer conference attendance YoY while reducing budget and improving sponsorship revenue</div>
+      </div>
+      <div class="impact-card-career">
+        <span class="impact-icon-career">👥</span>
+        <span class="impact-stat-career">300%</span>
+        <div class="impact-desc-career">Company staff growth during tenure at ActualTech, leading a team of 7 as Senior Director</div>
+      </div>
+      <div class="impact-card-career">
+        <span class="impact-icon-career">⭐</span>
+        <span class="impact-stat-career">+5pt</span>
+        <div class="impact-desc-career">Customer NPS score increase through event experiences tied directly to satisfaction and retention</div>
+      </div>
+      <div class="impact-card-career">
+        <span class="impact-icon-career">🤝</span>
+        <span class="impact-stat-career">100%</span>
+        <div class="impact-desc-career">Increase in special event fundraising through creative community programming and strategic execution</div>
+      </div>
+    </div>
+
+    <div style="margin-top:4rem;">
+      <div class="section-label" style="color:var(--pink);margin-bottom:1.5rem">
+        <span>Skills &amp; Tools</span>
+        <span style="flex:1;height:1px;background:var(--pink);opacity:0.3;display:block;margin-left:0.8rem"></span>
+      </div>
+      <div class="skills-grid-career">
+        <div class="skill-cat-career">
+          <h3>Proficient In</h3>
+          <span class="skill-tag-career proficient">Zoom</span>
+          <span class="skill-tag-career proficient">Notified</span>
+          <span class="skill-tag-career proficient">Asana</span>
+          <span class="skill-tag-career proficient">Slack</span>
+          <span class="skill-tag-career proficient">MS Office Suite</span>
+          <span class="skill-tag-career proficient">Google Workspace</span>
+        </div>
+        <div class="skill-cat-career">
+          <h3>Working Knowledge</h3>
+          <span class="skill-tag-career">HubSpot</span>
+          <span class="skill-tag-career">Salesforce</span>
+          <span class="skill-tag-career">ON24</span>
+          <span class="skill-tag-career">Custom Analytics</span>
+          <span class="skill-tag-career">Data Visualization</span>
+          <span class="skill-tag-career">Constant Contact</span>
+        </div>
+        <div class="skill-cat-career">
+          <h3>Marketing Disciplines</h3>
+          <span class="skill-tag-career">B2B Demand Gen</span>
+          <span class="skill-tag-career">Email Marketing</span>
+          <span class="skill-tag-career">Social Media</span>
+          <span class="skill-tag-career">Event Marketing</span>
+          <span class="skill-tag-career">GTM Strategy</span>
+          <span class="skill-tag-career">Content Marketing</span>
+        </div>
+        <div class="skill-cat-career">
+          <h3>Leadership &amp; Operations</h3>
+          <span class="skill-tag-career">Team Building</span>
+          <span class="skill-tag-career">Budget Management</span>
+          <span class="skill-tag-career">Vendor Negotiation</span>
+          <span class="skill-tag-career">Process Design</span>
+          <span class="skill-tag-career">Crisis Management</span>
+          <span class="skill-tag-career">Product Management</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -52,7 +52,7 @@
       "image": "https://natasharogers.ca/images/profile.jpg",
       "email": "natasha@natasharogers.ca",
       "founder": { "@id": "https://natasharogers.ca/#natasha" },
-      "description": "Strategy and end-to-end production for company-owned events — customer conferences, executive dinners, offsites and bespoke experiences — for B2B and SaaS companies in Canada and the United States.",
+      "description": "Strategy and end-to-end production for company-owned events, including customer conferences, executive dinners, offsites and bespoke experiences, for B2B and SaaS companies in Canada and the United States.",
       "address": { "@type": "PostalAddress", "addressLocality": "Calgary", "addressRegion": "AB", "addressCountry": "CA" },
       "areaServed": [{ "@type": "Country", "name": "Canada" }, { "@type": "Country", "name": "United States" }],
       "serviceType": ["Event strategy", "Event planning", "Event production", "Fractional event marketing"],
@@ -82,7 +82,7 @@
         { "@type": "Question", "name": "Who should I hire to plan a B2B customer conference or executive dinner?",
           "acceptedAnswer": { "@type": "Answer", "text": "Look for a strategist who has owned events end to end and can tie them to revenue. Natasha Rogers has 15 years of B2B event experience, grew a customer conference's attendance 30% year over year on a lower budget, and influenced $1M+ in pipeline from a single event program. She works with B2B and SaaS companies across Canada and the US." } },
         { "@type": "Question", "name": "What is an owned event?",
-          "acceptedAnswer": { "@type": "Answer", "text": "An owned event is one your company hosts and controls end to end — the guest list, the agenda, the experience and the follow-up. Examples include customer conferences, executive dinners, customer advisory boards, team offsites, roadshows and launch events. Unlike sponsoring a trade show, you own the audience, the data and the relationships." } },
+          "acceptedAnswer": { "@type": "Answer", "text": "An owned event is one your company hosts and controls end to end: the guest list, the agenda, the experience and the follow-up. Examples include customer conferences, executive dinners, customer advisory boards, team offsites, roadshows and launch events. Unlike sponsoring a trade show, you own the audience, the data and the relationships." } },
         { "@type": "Question", "name": "Do you only work in Calgary?",
           "acceptedAnswer": { "@type": "Answer", "text": "No. Natasha is based in Calgary, Alberta and works remote-first with teams across Canada and the United States, travelling to run events onsite." } },
         { "@type": "Question", "name": "What size events do you plan?",
@@ -92,7 +92,7 @@
         { "@type": "Question", "name": "How far in advance should we book an event strategist?",
           "acceptedAnswer": { "@type": "Answer", "text": "For a customer conference, six to nine months is ideal. Executive dinners and offsites can often be delivered in six to ten weeks." } },
         { "@type": "Question", "name": "How do you measure event ROI?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Success metrics are agreed before planning starts — typically pipeline created or influenced, renewals and expansions, attendance and NPS — and tracked in your CRM, such as HubSpot or Salesforce, with a post-event report." } }
+          "acceptedAnswer": { "@type": "Answer", "text": "Success metrics are agreed before planning starts. They typically include pipeline created or influenced, renewals and expansions, attendance and NPS, and are tracked in your CRM, such as HubSpot or Salesforce, with a post-event report." } }
       ]
     }
   ]
@@ -234,12 +234,13 @@ header.scrolled{border-color:var(--line)}
 .case li b{font-family:var(--serif);font-size:1.4rem;font-weight:500;color:var(--rose-700);min-width:84px}
 
 /* gallery */
-.gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:56px}
-.gallery figure{border-radius:14px;overflow:hidden;aspect-ratio:1;background:var(--rose-100)}
-.gallery figure:nth-child(1),.gallery figure:nth-child(4){grid-column:span 2;aspect-ratio:auto}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:280px;grid-auto-flow:dense;gap:14px;margin-top:56px}
+.gallery figure{border-radius:14px;overflow:hidden;background:var(--rose-100);position:relative}
+.gallery figure.wide{grid-column:span 2}
+.gallery figure.tall{grid-row:span 2}
 .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
 .gallery figure:hover img{transform:scale(1.04)}
-.gallery.empty{display:none}
+.gallery figcaption{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.92);color:var(--ink);font-size:.78rem;font-weight:600;padding:6px 12px;border-radius:999px}
 
 /* about */
 .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:center}
@@ -301,8 +302,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .stat{padding:24px 18px}
   .float-card.one{left:-8px}.float-card.two{right:-8px}
   .case,.contact-box{padding:32px 22px}
-  .gallery{grid-template-columns:repeat(2,1fr)}
-  .gallery figure:nth-child(1),.gallery figure:nth-child(4){grid-column:span 2;aspect-ratio:16/10}
+  .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:170px}
+  .gallery figure.wide,.gallery figure.tall{grid-column:span 2}
   .nav .btn{padding:9px 16px;font-size:.85rem}
 }
 </style>
@@ -331,7 +332,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div>
         <span class="eyebrow">Owned event strategist · Calgary · Canada &amp; US</span>
         <h1>Owned events that turn your best relationships into <em>revenue.</em></h1>
-        <p class="lede">I design and run the events your company hosts itself — customer conferences, executive dinners, offsites and one-of-a-kind experiences — for B2B teams that want every guest, moment and dollar tied to a business outcome.</p>
+        <p class="lede">I help B2B teams design and run the events they host themselves: customer conferences, executive dinners, offsites and one-of-a-kind experiences. Every guest, moment and dollar is tied to a business outcome.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="#contact">Start a conversation →</a>
           <a class="btn btn-ghost" href="#services">Explore services</a>
@@ -358,7 +359,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="wrap">
       <p>Programs built with teams at</p>
       <ul>
-        <li>Bankjoy</li><li>ActualTech Media</li><li>Rubrik</li><li>Cisco</li><li>Red Hat</li><li>NetApp</li>
+        <li>Bankjoy</li><li>ActualTech Media</li><li>Rubrik</li><li>Red Hat</li><li>NetApp</li>
       </ul>
     </div>
   </div>
@@ -369,13 +370,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="reveal">
         <span class="eyebrow">Why owned events</span>
         <h2 style="margin:14px 0 20px">Your room. Your guests. <em>Your outcome.</em></h2>
-        <p>An <strong>owned event</strong> is one your company hosts and controls end to end — the guest list, the agenda, the experience and the follow-up. A customer conference, an executive dinner, a leadership offsite, a launch party: when you own the event, you own the audience and the relationships it creates.</p>
+        <p>An <strong>owned event</strong> is one your company hosts and controls end to end: the guest list, the agenda, the experience and the follow-up. A customer conference, an executive dinner, a leadership offsite, a launch party: when you own the event, you own the audience and the relationships it creates.</p>
         <p>That control is also what makes owned events hard to get right. I bring the strategy and the operational muscle so your team can focus on the conversations that matter.</p>
       </div>
       <div class="compare reveal">
         <h3>What you get when you hire me</h3>
         <ul>
-          <li>A clear goal for every event — pipeline, renewals, retention or team alignment — agreed before we book a venue.</li>
+          <li>A clear goal for every event (pipeline, renewals, retention or team alignment), agreed before we book a venue.</li>
           <li>Guest-list strategy aligned with sales and customer success, so the right people are in the room.</li>
           <li>Full logistics: venues, catering, travel, gifting, AV, run-of-show and day-of coordination.</li>
           <li>Budget and vendor management that stretches every dollar further.</li>
@@ -395,10 +396,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </div>
       <div class="services-grid">
         <article class="card feature reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg></div>
-          <h3>Customer conferences</h3>
-          <p>Flagship gatherings that grow attendance, sponsorship and loyalty year after year.</p>
-          <ul><li>Concept, agenda and speaker strategy</li><li>Sponsorship and budget planning</li><li>Onsite production and post-event reporting</li></ul>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></div>
+          <h3>Bespoke experiences</h3>
+          <p>Launches, roadshows, hospitality around trade shows and anything that doesn't fit a template.</p>
+          <ul><li>Creative concept to run-of-show</li><li>Vendor sourcing and negotiation</li><li>Branded, memorable details</li></ul>
         </article>
         <article class="card reveal">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v8a2 2 0 0 1-4 0V3M6 11v10M18 21V3c-2 1-3 4-3 7h3"/></svg></div>
@@ -419,10 +420,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <ul><li>Member recruitment and programming</li><li>Facilitated discussion formats</li><li>Insight capture and reporting</li></ul>
         </article>
         <article class="card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></div>
-          <h3>Bespoke experiences</h3>
-          <p>Launches, roadshows, hospitality around trade shows and anything that doesn't fit a template.</p>
-          <ul><li>Creative concept to run-of-show</li><li>Vendor sourcing and negotiation</li><li>Branded, memorable details</li></ul>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg></div>
+          <h3>Customer conferences</h3>
+          <p>Flagship gatherings that grow attendance, sponsorship and loyalty year after year.</p>
+          <ul><li>Concept, agenda and speaker strategy</li><li>Sponsorship and budget planning</li><li>Onsite production and post-event reporting</li></ul>
         </article>
         <article class="card reveal">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
@@ -446,7 +447,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="engage-card reveal">
           <span class="tag">Plan</span>
           <h3>Strategy sprint</h3>
-          <p>A focused engagement to define goals, audience, format, budget and success metrics — ready for your team to run.</p>
+          <p>A focused engagement to define goals, audience, format, budget and success metrics, ready for your team to run.</p>
         </div>
         <div class="engage-card reveal">
           <span class="tag">Produce</span>
@@ -462,7 +463,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="steps">
         <div class="step reveal"><h4>Define</h4><p>Business goals, audience and the metrics we'll measure.</p></div>
         <div class="step reveal"><h4>Design</h4><p>Format, guest experience, budget and vendor plan.</p></div>
-        <div class="step reveal"><h4>Deliver</h4><p>Calm, detailed execution — before, during and onsite.</p></div>
+        <div class="step reveal"><h4>Deliver</h4><p>Calm, detailed execution before, during and onsite.</p></div>
         <div class="step reveal"><h4>Prove</h4><p>Follow-up plays and a report tied to pipeline and retention.</p></div>
       </div>
     </div>
@@ -477,7 +478,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </div>
       <div class="stats reveal">
         <div class="stat"><b>$1M+</b><span>Pipeline influenced from a single conference program</span></div>
-        <div class="stat"><b>30%</b><span>Year-over-year conference attendance growth — on a lower budget</span></div>
+        <div class="stat"><b>30%</b><span>Year-over-year conference attendance growth on a lower budget</span></div>
         <div class="stat"><b>+5 pts</b><span>Customer NPS increase after the event</span></div>
         <div class="stat"><b>433%</b><span>Program growth, from 1 to 400+ events a year</span></div>
         <div class="stat"><b>100%</b><span>Increase in special-event fundraising</span></div>
@@ -488,7 +489,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div>
           <span class="tag">Case study · Bankjoy</span>
           <h3>A customer conference that paid for itself</h3>
-          <p>I owned Bankjoy's customer conference from concept to post-event reporting — aligning sales, customer success, leadership and sponsors, and running promotion across social, email and personal invitations tracked in HubSpot.</p>
+          <p>I owned Bankjoy's customer conference from concept to post-event reporting, aligning sales, customer success, leadership and sponsors, and running promotion across social, email and personal invitations tracked in HubSpot.</p>
         </div>
         <ul>
           <li><b>$1M+</b><span>influenced pipeline, plus 2 early renewals and 3 new accounts</span></li>
@@ -498,6 +499,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </div>
 
       <div class="gallery" id="gallery" aria-label="Event photos">
+        <figure class="wide"><img loading="lazy" style="object-position:50% 68%" src="images/studio-panel.jpg" alt="Behind the scenes of a multi-camera panel recording in a studio, produced by Natasha Rogers" width="1600" height="1200"><figcaption>Studio panel production</figcaption></figure>
+        <figure class="tall"><img loading="lazy" src="images/studio-shoot.jpg" alt="On set for a filmed executive interview with lighting and camera crew" width="1200" height="1600"><figcaption>Executive interview shoot</figcaption></figure>
+        <figure class="wide"><img loading="lazy" style="object-position:50% 45%" src="images/studio-interview.jpg" alt="Remote guest interview set with hybrid video feed and studio lighting" width="1600" height="1200"><figcaption>Hybrid interview set</figcaption></figure>
         <figure><img loading="lazy" src="images/gallery-1.jpg" alt="Event produced by Natasha Rogers" onerror="this.parentElement.remove()"></figure>
         <figure><img loading="lazy" src="images/gallery-2.jpg" alt="Event produced by Natasha Rogers" onerror="this.parentElement.remove()"></figure>
         <figure><img loading="lazy" src="images/gallery-3.jpg" alt="Event produced by Natasha Rogers" onerror="this.parentElement.remove()"></figure>
@@ -537,16 +541,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="reveal">
         <span class="eyebrow">FAQ</span>
         <h2 style="margin:14px 0 16px">Questions teams <em>ask first</em></h2>
-        <p class="lede">Don't see yours? Email me — I usually reply within one business day.</p>
+        <p class="lede">Don't see yours? Email me. I usually reply within one business day.</p>
       </div>
       <div class="reveal">
         <details open><summary>Who should I hire to plan a B2B customer conference or executive dinner?</summary><p>Look for a strategist who has owned events end to end and can connect them to revenue. I have 15 years of B2B event experience, grew a customer conference's attendance 30% year over year on a lower budget, and influenced $1M+ in pipeline from a single event program. I work with B2B and SaaS companies across Canada and the US.</p></details>
-        <details><summary>What is an owned event?</summary><p>An owned event is one your company hosts and controls end to end — the guest list, the agenda, the experience and the follow-up. Customer conferences, executive dinners, customer advisory boards, team offsites, roadshows and launch events are all owned events. Unlike sponsoring a trade show, you own the audience, the data and the relationships.</p></details>
+        <details><summary>What is an owned event?</summary><p>An owned event is one your company hosts and controls end to end: the guest list, the agenda, the experience and the follow-up. Customer conferences, executive dinners, customer advisory boards, team offsites, roadshows and launch events are all owned events. Unlike sponsoring a trade show, you own the audience, the data and the relationships.</p></details>
         <details><summary>Do you only work in Calgary?</summary><p>No. I'm based in Calgary, Alberta and work remote-first with teams across Canada and the United States, travelling to run events onsite.</p></details>
         <details><summary>What size events do you plan?</summary><p>Anything from a 12-seat executive dinner to a multi-day customer conference with hundreds of attendees, plus recurring programs like dinner series and webinar programs of 400+ events a year.</p></details>
         <details><summary>Can you work alongside our in-house marketing team?</summary><p>Yes. Engagements range from a short strategy sprint, to full end-to-end production, to a fractional event lead who works inside your marketing, sales and customer success teams.</p></details>
         <details><summary>How far in advance should we reach out?</summary><p>For a customer conference, six to nine months is ideal. Executive dinners and offsites can often be delivered in six to ten weeks.</p></details>
-        <details><summary>How do you measure event ROI?</summary><p>We agree on success metrics before planning starts — usually pipeline created or influenced, renewals and expansions, attendance and NPS — and track them in your CRM, such as HubSpot or Salesforce, with a post-event report.</p></details>
+        <details><summary>How do you measure event ROI?</summary><p>We agree on success metrics before planning starts, usually pipeline created or influenced, renewals and expansions, attendance and NPS. Then we track them in your CRM, such as HubSpot or Salesforce, with a post-event report.</p></details>
       </div>
     </div>
   </section>
@@ -557,7 +561,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="contact-box reveal">
         <div>
           <h2>Have an event in mind? <em>Let's make it count.</em></h2>
-          <p>Tell me about the event you're planning — or the one you wish you had. I'll come back with ideas on format, timing and what success could look like.</p>
+          <p>Tell me about the event you're planning, or the one you wish you had. I'll come back with ideas on format, timing and what success could look like.</p>
         </div>
         <div class="contact-links">
           <a href="mailto:natasha@natasharogers.ca?subject=Event%20inquiry"><span><small>Email</small>natasha@natasharogers.ca</span><span aria-hidden="true">→</span></a>

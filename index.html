@@ -256,12 +256,25 @@ header.scrolled{border-color:var(--line)}
 .icon svg{width:24px;height:24px}
 .card h3{margin-bottom:10px}
 .card p{color:var(--ink-2);font-size:.97rem}
-.card ul{margin-top:16px;padding-left:18px;color:var(--ink-2);font-size:.92rem;display:grid;gap:6px}
+.card ul{margin-top:12px;padding-left:18px;color:var(--ink-2);font-size:.92rem;display:grid;gap:6px}
 .card ul li::marker{color:var(--rose-600)}
 .card.feature{background:linear-gradient(160deg,var(--rose-900),var(--rose-700));color:#fff;border:none}
 .card.feature p,.card.feature ul{color:#F6DCE7}
 .card.feature .icon{background:rgba(255,255,255,.14);color:#fff}
 .card.feature h3{color:#fff}
+
+.card-more{margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+.card-more summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:32px;cursor:pointer;list-style:none;font-size:.9rem;font-weight:600;color:var(--rose-700)}
+.card-more summary::-webkit-details-marker{display:none}
+.card-more summary::after{content:"+";font-size:1.35rem;font-weight:400;line-height:1;transition:transform .2s}
+.card-more[open] summary::after{transform:rotate(45deg)}
+.card-more summary:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:4px}
+.card.feature .card-more{border-color:rgba(255,255,255,.22)}
+.card.feature .card-more summary{color:#fff}
+@supports (grid-template-rows:subgrid){
+  .services-grid .card{display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:0}
+}
+@media (prefers-reduced-motion:reduce){.card-more summary::after{transition:none}}
 
 /* engagement */
 .engage{background:var(--ink);color:#fff}
@@ -423,37 +436,37 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></div>
           <h3>Bespoke experiences</h3>
           <p>Launches, roadshows, hospitality around trade shows and anything that doesn't fit a template.</p>
-          <ul><li>Creative concept to run-of-show</li><li>Vendor sourcing and negotiation</li><li>Branded, memorable details</li></ul>
+          <details class="card-more"><summary>What's included</summary><ul><li>Creative concept to run-of-show</li><li>Vendor sourcing and negotiation</li><li>Branded, memorable details</li></ul></details>
         </article>
         <article class="card reveal">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v8a2 2 0 0 1-4 0V3M6 11v10M18 21V3c-2 1-3 4-3 7h3"/></svg></div>
           <h3>Executive &amp; VIP dinners</h3>
           <p>Intimate, curated evenings that speed up deals and reward your best customers.</p>
-          <ul><li>Guest-list and seating strategy</li><li>Single dinners or multi-city series</li><li>Follow-up cadence with sales</li></ul>
+          <details class="card-more"><summary>What's included</summary><ul><li>Guest-list and seating strategy</li><li>Single dinners or multi-city series</li><li>Follow-up cadence with sales</li></ul></details>
         </article>
         <article class="card reveal">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20 9.5 8l4 7 2.5-4 5 9H3z"/><circle cx="17" cy="5" r="2"/></svg></div>
           <h3>Offsites &amp; retreats</h3>
           <p>Team and leadership offsites that leave people aligned, energized and connected.</p>
-          <ul><li>Venue sourcing and travel</li><li>Agenda design and facilitation support</li><li>Activities that build real connection</li></ul>
+          <details class="card-more"><summary>What's included</summary><ul><li>Venue sourcing and travel</li><li>Agenda design and facilitation support</li><li>Activities that build real connection</li></ul></details>
         </article>
         <article class="card reveal">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 2 6 5.5"/></svg></div>
           <h3>Customer advisory boards</h3>
           <p>Structured sessions that turn customer insight into product and retention wins.</p>
-          <ul><li>Member recruitment and programming</li><li>Facilitated discussion formats</li><li>Insight capture and reporting</li></ul>
+          <details class="card-more"><summary>What's included</summary><ul><li>Member recruitment and programming</li><li>Facilitated discussion formats</li><li>Insight capture and reporting</li></ul></details>
         </article>
         <article class="card reveal">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg></div>
           <h3>Customer conferences</h3>
           <p>Flagship gatherings that grow attendance, sponsorship and loyalty year after year.</p>
-          <ul><li>Concept, agenda and speaker strategy</li><li>Sponsorship and budget planning</li><li>Onsite production and post-event reporting</li></ul>
+          <details class="card-more"><summary>What's included</summary><ul><li>Concept, agenda and speaker strategy</li><li>Sponsorship and budget planning</li><li>Onsite production and post-event reporting</li></ul></details>
         </article>
         <article class="card reveal">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
           <h3>Virtual &amp; hybrid programs</h3>
           <p>Webinar and hybrid programs that extend your owned events to a global audience.</p>
-          <ul><li>Zoom, ON24 and Goldcast production</li><li>Demand-gen aligned to your GTM plan</li><li>Scaled programs to 400+ events a year</li></ul>
+          <details class="card-more"><summary>What's included</summary><ul><li>Zoom, ON24 and Goldcast production</li><li>Demand-gen aligned to your GTM plan</li><li>Scaled programs to 400+ events a year</li></ul></details>
         </article>
       </div>
     </div>

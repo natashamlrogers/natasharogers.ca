@@ -221,7 +221,8 @@ header.scrolled{border-color:var(--line)}
 .hero{padding:72px 0 96px;background:
   radial-gradient(900px 500px at 85% 10%, var(--rose-100), transparent 60%),
   radial-gradient(700px 400px at 0% 100%, var(--rose-50), transparent 60%)}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.hero-grid{display:block}
+.hero-grid>div{max-width:860px}
 .hero h1{font-size:clamp(2.6rem,5.6vw,4.4rem);margin:20px 0 24px}
 .hero .lede{margin-bottom:34px}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
@@ -229,7 +230,6 @@ header.scrolled{border-color:var(--line)}
 .portrait img{width:100%;height:100%;object-fit:cover}
 .portrait .initials{display:none;position:absolute;inset:0;align-items:center;justify-content:center;font-family:var(--serif);font-size:6rem;color:#fff}
 .portrait.noimg img{display:none}.portrait.noimg .initials{display:flex}
-.hero-visual{position:relative}
 
 /* trust strip */
 .trust{padding:36px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
@@ -320,8 +320,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 /* responsive */
 @media (max-width:980px){
-  .hero-grid,.define-grid,.about-grid,.contact-box{grid-template-columns:1fr}
-  .hero-visual{max-width:420px;margin:0 auto}
+  .define-grid,.about-grid,.contact-box{grid-template-columns:1fr}
   .services-grid,.engage-grid{grid-template-columns:1fr 1fr}
   .stats{grid-template-columns:1fr 1fr}
   .nav ul{display:none}
@@ -374,12 +373,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="hero-ctas">
           <a class="btn btn-primary" href="https://app.reclaim.ai/m/natasharogers/flexible-quick-meeting" target="_blank" rel="noopener">Start a conversation →</a>
           <a class="btn btn-ghost" href="#services">Explore services</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="portrait">
-          <img src="images/profile.jpg" alt="Natasha Rogers, owned event strategist based in Calgary" width="640" height="800" onerror="this.parentElement.classList.add('noimg')">
-          <span class="initials" aria-hidden="true">NR</span>
         </div>
       </div>
     </div>

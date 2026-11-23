@@ -300,7 +300,7 @@ header.scrolled{border-color:var(--line)}
 
 /* contact */
 .contact{padding:0 0 104px;background:#fff}
-.contact-box{background:linear-gradient(135deg,var(--rose-900),var(--rose-700) 60%,var(--rose-600));color:#fff;border-radius:28px;padding:72px 64px;display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:center;position:relative;overflow:hidden}
+.contact-box{background:linear-gradient(135deg,var(--rose-900),var(--rose-700) 60%,var(--rose-600));color:#fff;border-radius:28px;padding:72px 64px;display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:center;position:relative;overflow:hidden;overflow:clip}
 .contact-box::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;border:1.5px solid rgba(255,255,255,.12);right:-120px;top:-160px}
 .contact-box h2{color:#fff}
 .contact-box em{color:var(--rose-200)}
@@ -341,6 +341,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .gallery figure:not(.wide):not(.tall):last-child:nth-child(odd){grid-column:span 2}
   .nav .btn{padding:9px 16px;font-size:.85rem}
 }
+/* copied-to-clipboard popup */
+.toast{position:fixed;left:50%;bottom:28px;z-index:100;transform:translate(-50%,16px);max-width:calc(100vw - 32px);padding:13px 22px;border-radius:999px;background:var(--ink);color:#fff;font-size:.92rem;font-weight:600;white-space:nowrap;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.toast{transition:none}}
 </style>
 </head>
 <body>
@@ -574,6 +578,48 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold:.12}) : null;
   document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+</script>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+  (() => {
+    const toast = document.getElementById('toast');
+    let timer;
+    const showToast = (message) => {
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(timer);
+      timer = setTimeout(() => toast.classList.remove('show'), 2400);
+    };
+    const legacyCopy = (text) => {
+      const field = document.createElement('textarea');
+      field.value = text;
+      field.setAttribute('readonly', '');
+      field.style.cssText = 'position:fixed;opacity:0';
+      document.body.appendChild(field);
+      field.select();
+      let copied = false;
+      try { copied = document.execCommand('copy'); } catch (e) {}
+      field.remove();
+      return copied;
+    };
+    document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
+      link.title = 'Click to copy email address';
+      link.setAttribute('aria-label', 'Copy email address ' + link.getAttribute('href').slice(7).split('?')[0]);
+      link.addEventListener('click', async (event) => {
+        event.preventDefault();
+        const email = link.getAttribute('href').slice(7).split('?')[0];
+        let copied = false;
+        try {
+          await navigator.clipboard.writeText(email);
+          copied = true;
+        } catch (e) {
+          copied = legacyCopy(email);
+        }
+        if (copied) showToast('Copied to clipboard');
+        else location.href = link.href; // if copying is blocked, open their email app
+      });
+    });
+  })();
 </script>
 </body>
 </html>
